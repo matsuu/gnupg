@@ -12,6 +12,7 @@ msgstr ""
 "PO-Revision-Date: 2004-11-23 11:14+0900\n"
 "Last-Translator: IIDA Yosiaki <iida@gnu.org>\n"
 "Language-Team: Japanese <translation-team-ja@lists.sourceforge.net>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=EUC-JP\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,6 +20,20 @@ msgstr ""
 #, fuzzy, c-format
 msgid "failed to acquire the pinentry lock: %s\n"
 msgstr "指紋の保管に失敗しました: %s\n"
+
+#. TRANSLATORS: These are labels for buttons etc used in
+#. Pinentries.  An underscore indicates that the next letter
+#. should be used as an accelerator.  Double the underscore for
+#. a literal one.  The actual to be translated text starts after
+#. the second vertical bar.
+msgid "|pinentry-label|_OK"
+msgstr ""
+
+msgid "|pinentry-label|_Cancel"
+msgstr ""
+
+msgid "|pinentry-label|PIN:"
+msgstr ""
 
 #. TRANSLATORS: This string is displayed by Pinentry as the label
 #. for the quality bar.
@@ -46,6 +61,9 @@ msgid ""
 "this session"
 msgstr "パスフレーズを入力してください。これは秘密の文章のことです \n"
 
+#. TRANSLATORS: The string is appended to an error message in
+#. the pinentry.  The %s is the actual error message, the
+#. two %d give the current and maximum number of tries.
 #, c-format
 msgid "SETERROR %s (try %d of %d)"
 msgstr ""
@@ -98,7 +116,7 @@ msgid "detected card with S/N: %s\n"
 msgstr ""
 
 #, fuzzy, c-format
-msgid "error getting default authentication keyID of card: %s\n"
+msgid "no authentication key for ssh on card: %s\n"
 msgstr "現行鍵情報の取得エラー: %s\n"
 
 #, fuzzy, c-format
@@ -113,19 +131,31 @@ msgstr "鍵の読出しに失敗しました: %s\n"
 msgid "error writing key: %s\n"
 msgstr "鍵輪「%s」の書込みエラー: %s\n"
 
+#, c-format
+msgid ""
+"An ssh process requested the use of key%%0A  %s%%0A  (%s)%%0ADo you want to "
+"allow this?"
+msgstr ""
+
+msgid "Allow"
+msgstr ""
+
+msgid "Deny"
+msgstr ""
+
 #, fuzzy, c-format
-msgid "Please enter the passphrase for the ssh key%0A  %c"
+msgid "Please enter the passphrase for the ssh key%%0A  %F%%0A  (%c)"
 msgstr "パスフレーズを入力してください。これは秘密の文章のことです \n"
 
 #, fuzzy
 msgid "Please re-enter this passphrase"
 msgstr "パスフレーズの変更"
 
-#, c-format
+#, fuzzy, c-format
 msgid ""
-"Please enter a passphrase to protect the received secret key%%0A   %s%%"
-"0Awithin gpg-agent's key storage"
-msgstr ""
+"Please enter a passphrase to protect the received secret key%%0A   %s%%0A   "
+"%s%%0Awithin gpg-agent's key storage"
+msgstr "パスフレーズを入力してください。これは秘密の文章のことです \n"
 
 msgid "does not match - try again"
 msgstr ""
@@ -246,7 +276,7 @@ msgid "Yes, protection is not needed"
 msgstr ""
 
 #, fuzzy, c-format
-msgid "Please enter the passphrase to%0Ato protect your new key"
+msgid "Please enter the passphrase to%0Aprotect your new key"
 msgstr ""
 "秘密鍵を保護するためにパスフレーズがいります。\n"
 "\n"
@@ -370,6 +400,10 @@ msgstr "オプション・ファイル「%s」: %s\n"
 msgid "reading options from '%s'\n"
 msgstr "「%s」からオプションを読み出します\n"
 
+#, fuzzy, c-format
+msgid "NOTE: '%s' is not considered an option\n"
+msgstr "このセッションでgpg-agentは無効です\n"
+
 #, c-format
 msgid "error creating '%s': %s\n"
 msgstr "「%s」の作成エラー: %s\n"
@@ -442,7 +476,7 @@ msgid "ssh handler 0x%lx for fd %d terminated\n"
 msgstr ""
 
 #, fuzzy, c-format
-msgid "pth_select failed: %s - waiting 1s\n"
+msgid "npth_pselect failed: %s - waiting 1s\n"
 msgstr "秘密の更新に失敗しました: %s\n"
 
 #, fuzzy, c-format
@@ -617,13 +651,42 @@ msgstr "パスフレーズの変更"
 msgid "I'll change it later"
 msgstr ""
 
+msgid "DSA requires the hash length to be a multiple of 8 bits\n"
+msgstr ""
+
+#, c-format
+msgid "%s key uses an unsafe (%u bit) hash\n"
+msgstr ""
+
+#, c-format
+msgid "a %zu bit hash is not valid for a %u bit %s key\n"
+msgstr ""
+
+msgid "secret key parts are not available\n"
+msgstr "秘密部分が得られません\n"
+
+#, fuzzy, c-format
+#| msgid "protection algorithm %d%s is not supported\n"
+msgid "public key algorithm %d (%s) is not supported\n"
+msgstr "保護アルゴリズム%d%sはサポートしていません\n"
+
+#, fuzzy, c-format
+#| msgid "protection algorithm %d%s is not supported\n"
+msgid "protection algorithm %d (%s) is not supported\n"
+msgstr "保護アルゴリズム%d%sはサポートしていません\n"
+
+#, fuzzy, c-format
+#| msgid "protection algorithm %d%s is not supported\n"
+msgid "protection hash algorithm %d (%s) is not supported\n"
+msgstr "保護アルゴリズム%d%sはサポートしていません\n"
+
 #, fuzzy, c-format
 msgid "error creating a pipe: %s\n"
 msgstr "パスフレーズの作成エラー: %s\n"
 
 #, fuzzy, c-format
-msgid "can't fdopen pipe for reading: %s\n"
-msgstr "署名されたデータ「%s」が開けません\n"
+msgid "error creating a stream for a pipe: %s\n"
+msgstr "パスフレーズの作成エラー: %s\n"
 
 #, fuzzy, c-format
 msgid "error forking process: %s\n"
@@ -633,21 +696,21 @@ msgstr "「%s」の読出しエラー: %s\n"
 msgid "waiting for process %d to terminate failed: %s\n"
 msgstr ""
 
-#, fuzzy, c-format
-msgid "error getting exit code of process %d: %s\n"
-msgstr "現行鍵情報の取得エラー: %s\n"
-
-#, fuzzy, c-format
-msgid "error running '%s': exit status %d\n"
-msgstr "「%s」の読出しエラー: %s\n"
-
 #, c-format
 msgid "error running '%s': probably not installed\n"
 msgstr ""
 
 #, fuzzy, c-format
+msgid "error running '%s': exit status %d\n"
+msgstr "「%s」の読出しエラー: %s\n"
+
+#, fuzzy, c-format
 msgid "error running '%s': terminated\n"
 msgstr "「%s」の読出しエラー: %s\n"
+
+#, fuzzy, c-format
+msgid "error getting exit code of process %d: %s\n"
+msgstr "現行鍵情報の取得エラー: %s\n"
 
 #, fuzzy, c-format
 msgid "error creating socket: %s\n"
@@ -734,10 +797,29 @@ msgstr ""
 msgid "out of core while allocating %lu bytes"
 msgstr ""
 
-msgid "no running gpg-agent - starting one\n"
+#, c-format
+msgid "no running gpg-agent - starting '%s'\n"
+msgstr ""
+
+#, c-format
+msgid "waiting for the agent to come up ... (%ds)\n"
+msgstr ""
+
+msgid "connection to agent established\n"
 msgstr ""
 
 msgid "can't connect to the agent - trying fall back\n"
+msgstr ""
+
+#, c-format
+msgid "no running Dirmngr - starting '%s'\n"
+msgstr ""
+
+#, c-format
+msgid "waiting for the dirmngr to come up ... (%ds)\n"
+msgstr ""
+
+msgid "connection to the dirmngr established\n"
 msgstr ""
 
 #. TRANSLATORS: Copy the prefix between the vertical bars
@@ -761,6 +843,22 @@ msgstr "不正な証明書です"
 
 msgid "|audit-log-result|Error"
 msgstr ""
+
+#, fuzzy
+msgid "|audit-log-result|Not used"
+msgstr "不正な証明書です"
+
+#, fuzzy
+msgid "|audit-log-result|Okay"
+msgstr "不正な証明書です"
+
+#, fuzzy
+msgid "|audit-log-result|Skipped"
+msgstr "不正な証明書です"
+
+#, fuzzy
+msgid "|audit-log-result|Some"
+msgstr "不正な証明書です"
 
 #, fuzzy
 msgid "Certificate chain available"
@@ -806,8 +904,25 @@ msgstr ""
 msgid "Data signing succeeded"
 msgstr ""
 
+#, fuzzy, c-format
+msgid "data hash algorithm: %s"
+msgstr "無効なハッシュ・アルゴリズム「%s」です\n"
+
+#, fuzzy, c-format
+msgid "Signer %d"
+msgstr "%sに施された署名\n"
+
+#, fuzzy, c-format
+msgid "attr hash algorithm: %s"
+msgstr "無効なハッシュ・アルゴリズム「%s」です\n"
+
 msgid "Data decryption succeeded"
 msgstr ""
+
+#, fuzzy
+#| msgid "protection algorithm %d%s is not supported\n"
+msgid "Encryption algorithm supported"
+msgstr "保護アルゴリズム%d%sはサポートしていません\n"
 
 #, fuzzy
 msgid "Data verification succeeded"
@@ -818,11 +933,11 @@ msgid "Signature available"
 msgstr "%sに施された署名\n"
 
 #, fuzzy
-msgid "Parsing signature succeeded"
+msgid "Parsing data succeeded"
 msgstr "“%s”からの正しい署名"
 
 #, fuzzy, c-format
-msgid "Bad hash algorithm: %s"
+msgid "bad data hash algorithm: %s"
 msgstr "無効なハッシュ・アルゴリズム「%s」です\n"
 
 #, fuzzy, c-format
@@ -877,6 +992,117 @@ msgstr "後尾の行にエラーがあります\n"
 #, fuzzy
 msgid "[none]"
 msgstr "[未設定]"
+
+#, fuzzy
+msgid "argument not expected"
+msgstr "管理コマンドは禁止されています\n"
+
+#, fuzzy
+msgid "read error"
+msgstr "ファイルの読出しエラー"
+
+#, fuzzy
+msgid "keyword too long"
+msgstr "行が長すぎます"
+
+#, fuzzy
+msgid "missing argument"
+msgstr "無効な指定です"
+
+#, fuzzy
+msgid "invalid command"
+msgstr "管理専用コマンド\n"
+
+#, fuzzy
+msgid "invalid alias definition"
+msgstr "無効な一覧オプションです\n"
+
+#, fuzzy
+msgid "out of core"
+msgstr "未処理"
+
+#, fuzzy
+msgid "invalid option"
+msgstr "無効な一覧オプションです\n"
+
+#, c-format
+msgid "missing argument for option \"%.50s\"\n"
+msgstr ""
+
+#, c-format
+msgid "option \"%.50s\" does not expect an argument\n"
+msgstr ""
+
+#, fuzzy, c-format
+msgid "invalid command \"%.50s\"\n"
+msgstr "無効なコマンド (“help”を参照)\n"
+
+#, c-format
+msgid "option \"%.50s\" is ambiguous\n"
+msgstr ""
+
+#, c-format
+msgid "command \"%.50s\" is ambiguous\n"
+msgstr ""
+
+#, fuzzy
+msgid "out of core\n"
+msgstr "未処理"
+
+#, fuzzy, c-format
+msgid "invalid option \"%.50s\"\n"
+msgstr "無効な一覧オプションです\n"
+
+#, c-format
+msgid "you found a bug ... (%s:%d)\n"
+msgstr "バグを発見 ... (%s:%d)\n"
+
+#, fuzzy, c-format
+msgid "error loading '%s': %s\n"
+msgstr "「%s」の読出しエラー: %s\n"
+
+#, fuzzy, c-format
+msgid "please see %s for more information\n"
+msgstr "詳細はhttp://www.gnupg.org/faq.htmlをご覧ください\n"
+
+#, c-format
+msgid "conversion from '%s' to '%s' not available\n"
+msgstr ""
+
+#, fuzzy, c-format
+msgid "iconv_open failed: %s\n"
+msgstr "署名に失敗しました: %s\n"
+
+#, fuzzy, c-format
+msgid "conversion from '%s' to '%s' failed: %s\n"
+msgstr "「%s」から「%s」への移動に失敗: %s\n"
+
+#, fuzzy, c-format
+msgid "failed to create temporary file '%s': %s\n"
+msgstr "ディレクトリー「%s」が作成できません: %s\n"
+
+#, fuzzy, c-format
+msgid "error writing to '%s': %s\n"
+msgstr "鍵輪「%s」の書込みエラー: %s\n"
+
+#, c-format
+msgid "removing stale lockfile (created by %d)\n"
+msgstr ""
+
+#, fuzzy, c-format
+msgid "waiting for lock (held by %d%s) %s...\n"
+msgstr "「%s」へ秘密鍵を書き込みます\n"
+
+msgid "(deadlock?) "
+msgstr ""
+
+#, fuzzy, c-format
+msgid "lock '%s' not made: %s\n"
+msgstr "公開鍵%sが見つかりません: %s\n"
+
+#, fuzzy, c-format
+msgid "waiting for lock %s...\n"
+msgstr "「%s」へ秘密鍵を書き込みます\n"
 
 #, c-format
 msgid "armor: %s\n"
@@ -1133,14 +1359,18 @@ msgstr "秘密鍵はもうカードに保管してあります\n"
 msgid "Replace existing keys? (y/N) "
 msgstr "既存の鍵群を交換しますか? (y/N) "
 
-#, c-format
+#, fuzzy, c-format
+#| msgid ""
+#| "Please note that the factory settings of the PINs are\n"
+#| "   PIN = '%s'     Admin PIN = '%s'\n"
+#| "You should change them using the command --change-pin\n"
 msgid ""
 "Please note that the factory settings of the PINs are\n"
-"   PIN = `%s'     Admin PIN = `%s'\n"
+"   PIN = '%s'     Admin PIN = '%s'\n"
 "You should change them using the command --change-pin\n"
 msgstr ""
 "出荷時のPIN設定は\n"
-"   PIN = `%s'     Admin PIN = `%s'\n"
+"   PIN = '%s'     Admin PIN = '%s'\n"
 "次のコマンドを使って変更すべきです --change-pin\n"
 
 msgid "Please select the type of key to generate:\n"
@@ -1157,22 +1387,6 @@ msgstr "   (3) 認証鍵\n"
 
 msgid "Invalid selection.\n"
 msgstr "無効な選択です。\n"
-
-msgid "Please select where to store the key:\n"
-msgstr "鍵の保管場所を選択してください:\n"
-
-msgid "unknown key protection algorithm\n"
-msgstr "未知の鍵保護アルゴリズムです\n"
-
-msgid "secret parts of key are not available\n"
-msgstr "鍵の秘密部分が無効です\n"
-
-msgid "secret key already stored on a card\n"
-msgstr "秘密鍵はもうカードに保管してあります\n"
-
-#, fuzzy, c-format
-msgid "error writing key to card: %s\n"
-msgstr "鍵輪「%s」の書込みエラー: %s\n"
 
 msgid "quit this menu"
 msgstr "このメニューを終了"
@@ -1222,8 +1436,8 @@ msgstr ""
 msgid "unblock the PIN using a Reset Code"
 msgstr ""
 
-msgid "Command> "
-msgstr "コマンド> "
+msgid "gpg/card> "
+msgstr ""
 
 msgid "Admin-only command\n"
 msgstr "管理専用コマンド\n"
@@ -1263,6 +1477,11 @@ msgstr "この鍵を鍵輪から削除しますか? (y/N) "
 
 msgid "This is a secret key! - really delete? (y/N) "
 msgstr "これは秘密鍵です! 本当に削除しますか? (y/N) "
+
+#, fuzzy
+#| msgid "exporting secret keys not allowed\n"
+msgid "deleting secret key not implemented\n"
+msgstr "秘密鍵の書出しは禁止です\n"
 
 #, c-format
 msgid "deleting keyblock failed: %s\n"
@@ -1401,10 +1620,6 @@ msgid "export revocation keys marked as \"sensitive\""
 msgstr "“%s”用の失効鍵が見つかりません\n"
 
 #, fuzzy
-msgid "remove the passphrase from exported subkeys"
-msgstr "副鍵の失効"
-
-#, fuzzy
 msgid "remove unusable parts from key during export"
 msgstr "使用できない秘密鍵です"
 
@@ -1418,10 +1633,6 @@ msgid "exporting secret keys not allowed\n"
 msgstr "秘密鍵の書出しは禁止です\n"
 
 #, c-format
-msgid "key %s: not protected - skipped\n"
-msgstr "鍵%s: 保護されていません - とばします\n"
-
-#, c-format
 msgid "key %s: PGP 2.x style key - skipped\n"
 msgstr "鍵%s: PGP 2.x形式の鍵です - とばします\n"
 
@@ -1429,16 +1640,10 @@ msgstr "鍵%s: PGP 2.x形式の鍵です - とばします\n"
 msgid "key %s: key material on-card - skipped\n"
 msgstr "鍵%s: 副鍵署名の場所が、誤っています - とばします\n"
 
-msgid "about to export an unprotected subkey\n"
-msgstr ""
-
-#, fuzzy, c-format
-msgid "failed to unprotect the subkey: %s\n"
-msgstr "鍵の保管に失敗しました: %s\n"
-
-#, c-format
-msgid "WARNING: secret key %s does not have a simple SK checksum\n"
-msgstr "警告: 秘密鍵%sには、単純なSKチェックサムがありません\n"
+#, fuzzy
+#| msgid "%s: skipped: %s\n"
+msgid " - skipped"
+msgstr "%s: スキップ: %s\n"
 
 msgid "WARNING: nothing exported\n"
 msgstr "警告: 何も書き出していません\n"
@@ -1465,17 +1670,13 @@ msgstr "CAの指紋: "
 msgid "Invalid key %s made valid by --allow-non-selfsigned-uid\n"
 msgstr "--allow-non-selfsigned-uidで有効にされた無効な鍵%sです\n"
 
-#, c-format
-msgid "no secret subkey for public subkey %s - ignoring\n"
-msgstr "公開副鍵%sにたいする秘密副鍵がありません - 無視\n"
-
 #, fuzzy, c-format
 msgid "using subkey %s instead of primary key %s\n"
 msgstr "副鍵%sを主鍵%sに代用します\n"
 
 #, c-format
-msgid "key %s: secret key without public key - skipped\n"
-msgstr "鍵%s: 公開鍵のない秘密鍵です - とばします\n"
+msgid "no secret subkey for public subkey %s - ignoring\n"
+msgstr "公開副鍵%sにたいする秘密副鍵がありません - 無視\n"
 
 #, fuzzy
 msgid "make a signature"
@@ -1518,6 +1719,9 @@ msgstr "秘密鍵の一覧"
 msgid "generate a new key pair"
 msgstr "新しい鍵対を生成"
 
+msgid "generate a revocation certificate"
+msgstr "失効証明書を生成"
+
 msgid "remove keys from the public keyring"
 msgstr "公開鍵輪から鍵群を削除"
 
@@ -1533,8 +1737,9 @@ msgstr "鍵へ内部的に署名"
 msgid "sign or edit a key"
 msgstr "鍵への署名や編集"
 
-msgid "generate a revocation certificate"
-msgstr "失効証明書を生成"
+#, fuzzy
+msgid "change a passphrase"
+msgstr "パスフレーズの変更"
 
 msgid "export keys"
 msgstr "鍵を書き出す"
@@ -1638,10 +1843,15 @@ msgstr ""
 msgid "Usage: gpg [options] [files] (-h for help)"
 msgstr "使い方: gpg [オプション] [ファイル] (ヘルプは -h)"
 
+#, fuzzy
+#| msgid ""
+#| "Syntax: gpg [options] [files]\n"
+#| "sign, check, encrypt or decrypt\n"
+#| "default operation depends on the input data\n"
 msgid ""
 "Syntax: gpg [options] [files]\n"
-"sign, check, encrypt or decrypt\n"
-"default operation depends on the input data\n"
+"Sign, check, encrypt or decrypt\n"
+"Default operation depends on the input data\n"
 msgstr ""
 "書式: gpg [オプション] [ファイル]\n"
 "署名、検査、暗号化や復号\n"
@@ -1704,9 +1914,11 @@ msgstr "警告: 拡張「%s」の安全でない許可\n"
 msgid "WARNING: unsafe enclosing directory ownership on homedir '%s'\n"
 msgstr "警告: homedir 「%s」の安全でない上位ディレクトリー所有者\n"
 
-#, c-format
+#, fuzzy, c-format
+#| msgid ""
+#| "WARNING: unsafe enclosing directory ownership on configuration file '%s'\n"
 msgid ""
-"WARNING: unsafe enclosing directory ownership on configuration file `%s'\n"
+"WARNING: unsafe enclosing directory ownership on configuration file '%s'\n"
 msgstr "警告: 構成ファイル「%s」の安全でない上位ディレクトリー所有者\n"
 
 #, c-format
@@ -1717,9 +1929,9 @@ msgstr "警告: 拡張「%s」の安全でない上位ディレクトリー所有者\n"
 msgid "WARNING: unsafe enclosing directory permissions on homedir '%s'\n"
 msgstr "警告: homedir 「%s」の安全でない上位ディレクトリー許可\n"
 
-#, c-format
+#, fuzzy, c-format
 msgid ""
-"WARNING: unsafe enclosing directory permissions on configuration file `%s'\n"
+"WARNING: unsafe enclosing directory permissions on configuration file '%s'\n"
 msgstr "警告: 構成ファイル「%s」の安全でない上位ディレクトリー許可\n"
 
 #, c-format
@@ -1888,6 +2100,9 @@ msgstr "%sは%sとともに使うことはできません!\n"
 msgid "%s makes no sense with %s!\n"
 msgstr "%sは%sとともに使っても無意味です!\n"
 
+msgid "WARNING: running with faked system time: "
+msgstr ""
+
 #, fuzzy, c-format
 msgid "will not run with insecure memory due to %s\n"
 msgstr "「%s」へ秘密鍵スタブを書き込みます\n"
@@ -2029,6 +2244,11 @@ msgstr "--lsign-key ユーザーid"
 msgid "--edit-key user-id [commands]"
 msgstr "--edit-key ユーザーid [コマンド]"
 
+#, fuzzy
+#| msgid "--sign-key user-id"
+msgid "--passwd <user-id>"
+msgstr "--sign-key ユーザーid"
+
 #, c-format
 msgid "keyserver send failed: %s\n"
 msgstr "鍵サーバーへの送信に失敗しました: %s\n"
@@ -2115,10 +2335,6 @@ msgstr ""
 #, fuzzy
 msgid "do not update the trustdb after import"
 msgstr "信用データベースを更新"
-
-#, fuzzy
-msgid "create a public key when importing a secret key"
-msgstr "公開鍵と秘密鍵が照合しません!\n"
 
 msgid "only accept updates to existing keys"
 msgstr ""
@@ -2327,27 +2543,24 @@ msgid "key %s: \"%s\" not changed\n"
 msgstr "鍵%s:“%s”変更なし\n"
 
 #, c-format
+msgid "key %s: secret key imported\n"
+msgstr "鍵%s: 秘密鍵を読み込みました\n"
+
+#, fuzzy, c-format
+#| msgid "skipped: secret key already present\n"
+msgid "key %s: secret key already exists\n"
+msgstr "スキップ: 秘密鍵はもうあります\n"
+
+#, fuzzy, c-format
+msgid "key %s: error sending to agent: %s\n"
+msgstr "「%s」の読出しエラー: %s\n"
+
+#, c-format
 msgid "key %s: secret key with invalid cipher %d - skipped\n"
 msgstr "鍵%s: 無効な暗号法%dの秘密鍵です - とばします\n"
 
 msgid "importing secret keys not allowed\n"
 msgstr "秘密鍵の読込みは禁止です\n"
-
-#, c-format
-msgid "no default secret keyring: %s\n"
-msgstr "既定の秘密鍵輪がありません: %s\n"
-
-#, c-format
-msgid "key %s: secret key imported\n"
-msgstr "鍵%s: 秘密鍵を読み込みました\n"
-
-#, c-format
-msgid "key %s: already in secret keyring\n"
-msgstr "鍵%s: もう秘密鍵輪にあります\n"
-
-#, c-format
-msgid "key %s: secret key not found: %s\n"
-msgstr "鍵%s: 秘密鍵が見つかりません: %s\n"
 
 #, c-format
 msgid "key %s: no public key - can't apply revocation certificate\n"
@@ -2374,12 +2587,17 @@ msgid "key %s: invalid self-signature on user ID \"%s\"\n"
 msgstr "鍵%s: ユーザーID“%s”の自己署名が、無効です\n"
 
 #, c-format
-msgid "key %s: no subkey for key binding\n"
-msgstr "鍵%s: 鍵に対応する副鍵がありません\n"
-
-#, c-format
 msgid "key %s: unsupported public key algorithm\n"
 msgstr "鍵%s: サポートしていない公開鍵アルゴリズムです\n"
+
+#, fuzzy, c-format
+#| msgid "key %s: direct key signature added\n"
+msgid "key %s: invalid direct key signature\n"
+msgstr "鍵%s: 直接鍵署名を追加\n"
+
+#, c-format
+msgid "key %s: no subkey for key binding\n"
+msgstr "鍵%s: 鍵に対応する副鍵がありません\n"
 
 #, c-format
 msgid "key %s: invalid subkey binding\n"
@@ -2448,18 +2666,6 @@ msgstr "鍵%s:“%s”失効証明書の追加\n"
 #, c-format
 msgid "key %s: direct key signature added\n"
 msgstr "鍵%s: 直接鍵署名を追加\n"
-
-#, fuzzy
-msgid "NOTE: a key's S/N does not match the card's one\n"
-msgstr "公開鍵と秘密鍵が照合しません!\n"
-
-#, fuzzy
-msgid "NOTE: primary key is online and stored on card\n"
-msgstr "秘密鍵はもうカードに保管してあります\n"
-
-#, fuzzy
-msgid "NOTE: secondary key is online and stored on card\n"
-msgstr "秘密鍵はもうカードに保管してあります\n"
 
 #, c-format
 msgid "error creating keyring '%s': %s\n"
@@ -2702,43 +2908,10 @@ msgstr "署名に失敗しました: %s\n"
 msgid "Key has only stub or on-card key items - no passphrase to change.\n"
 msgstr ""
 
-msgid "This key is not protected.\n"
-msgstr "この鍵は保護されていません。\n"
-
-msgid "Secret parts of primary key are not available.\n"
-msgstr "主鍵の秘密部分が得られません。\n"
-
-#, fuzzy
-msgid "Secret parts of primary key are stored on-card.\n"
-msgstr "主鍵の秘密部分が得られません。\n"
-
-msgid "Key is protected.\n"
-msgstr "鍵は保護されています。\n"
-
-#, c-format
-msgid "Can't edit this key: %s\n"
-msgstr "この鍵は編集できません: %s\n"
-
-msgid ""
-"Enter the new passphrase for this secret key.\n"
-"\n"
-msgstr ""
-"この秘密鍵の新しいパスフレーズを入力してください。\n"
-"\n"
-
-msgid "passphrase not correctly repeated; try again"
-msgstr "パスフレーズをちゃんと繰り返していません。再入力してください"
-
-msgid ""
-"You don't want a passphrase - this is probably a *bad* idea!\n"
-"\n"
-msgstr ""
-"パスフレーズが不必要なようですが、\n"
-"おそらくそれは＊ろくでもない＊考えです!\n"
-"\n"
-
-msgid "Do you really want to do this? (y/N) "
-msgstr "本当に実行しますか? (y/N) "
+#, fuzzy, c-format
+#| msgid "error creating passphrase: %s\n"
+msgid "key %s: error changing passphrase: %s\n"
+msgstr "パスフレーズの作成エラー: %s\n"
 
 msgid "moving a key signature to the correct place\n"
 msgstr "鍵の署名を正しい場所に移動します\n"
@@ -2879,10 +3052,6 @@ msgstr ""
 msgid "compact unusable user IDs and remove all signatures from key"
 msgstr ""
 
-#, c-format
-msgid "error reading secret keyblock \"%s\": %s\n"
-msgstr "秘密鍵ブロック“%s”の読出しエラー: %s\n"
-
 msgid "Secret key is available.\n"
 msgstr "秘密鍵が使用できます。\n"
 
@@ -2893,9 +3062,9 @@ msgid "Please use the command \"toggle\" first.\n"
 msgstr "まず“toggle”コマンドを使ってください。\n"
 
 msgid ""
-"* The `sign' command may be prefixed with an `l' for local signatures "
+"* The 'sign' command may be prefixed with an 'l' for local signatures "
 "(lsign),\n"
-"  a `t' for trust signatures (tsign), an `nr' for non-revocable signatures\n"
+"  a 't' for trust signatures (tsign), an 'nr' for non-revocable signatures\n"
 "  (nrsign), or any combination thereof (ltsign, tnrsign, etc.).\n"
 msgstr ""
 
@@ -2998,10 +3167,6 @@ msgstr "保存せずに終了しますか? (y/N) "
 msgid "update failed: %s\n"
 msgstr "更新に失敗しました: %s\n"
 
-#, c-format
-msgid "update secret failed: %s\n"
-msgstr "秘密の更新に失敗しました: %s\n"
-
 msgid "Key not changed so no update needed.\n"
 msgstr "鍵は無変更なので更新は不要です。\n"
 
@@ -3028,7 +3193,7 @@ msgid "There are no preferences on a PGP 2.x-style user ID.\n"
 msgstr "PGP 2.x形式ユーザーIDの選好が、ありません。\n"
 
 #, fuzzy, c-format
-msgid "This key was revoked on %s by %s key %s\n"
+msgid "The following key was revoked on %s by %s key %s\n"
 msgstr "この鍵は、%s鍵%sによって失効されたようです"
 
 #, c-format
@@ -3058,6 +3223,9 @@ msgstr "満了: %s"
 msgid "usage: %s"
 msgstr "利用法: %s"
 
+msgid "card-no: "
+msgstr "カード番号: "
+
 #, c-format
 msgid "trust: %s"
 msgstr "信用: %s"
@@ -3068,9 +3236,6 @@ msgstr "有効性: %s"
 
 msgid "This key has been disabled"
 msgstr "この鍵は使用禁止に設定されています"
-
-msgid "card-no: "
-msgstr "カード番号: "
 
 msgid ""
 "Please note that the shown key validity is not necessarily correct\n"
@@ -3183,9 +3348,6 @@ msgid ""
 "Are you sure you want to appoint this key as a designated revoker? (y/N) "
 msgstr "本当にこの鍵を指名失効者に任命しますか? (y/N) "
 
-msgid "Please remove selections from the secret keys.\n"
-msgstr "秘密鍵の選択をといてください。\n"
-
 #, fuzzy
 msgid "Please select at most one subkey.\n"
 msgstr "高々1個の副鍵を選択してください。\n"
@@ -3199,9 +3361,6 @@ msgstr "主鍵の有効期限を変更します。\n"
 
 msgid "You can't change the expiration date of a v3 key\n"
 msgstr "v3鍵の有効期限は変更できません\n"
-
-msgid "No corresponding signature in secret ring\n"
-msgstr "秘密鍵輪に対応する署名がありません\n"
 
 #, fuzzy, c-format
 msgid "signing subkey %s is already cross-certified\n"
@@ -3432,6 +3591,39 @@ msgstr "   (%d) RSA (独自能力を設定)\n"
 msgid "   (%d) RSA (set your own capabilities)\n"
 msgstr "   (%d) RSA (独自能力を設定)\n"
 
+#, fuzzy, c-format
+msgid "   (%d) ECDSA and ECDH\n"
+msgstr "   (%d) DSAとElgamal (既定)\n"
+
+#, fuzzy, c-format
+#| msgid "   (%d) DSA (sign only)\n"
+msgid "  (%d) ECDSA (sign only)\n"
+msgstr "   (%d) DSA (署名のみ)\n"
+
+#, fuzzy, c-format
+msgid "  (%d) ECDSA (set your own capabilities)\n"
+msgstr "   (%d) RSA (独自能力を設定)\n"
+
+#, fuzzy, c-format
+#| msgid "   (%d) RSA (encrypt only)\n"
+msgid "  (%d) ECDH (encrypt only)\n"
+msgstr "   (%d) RSA (暗号化のみ)\n"
+
+#, fuzzy, c-format
+msgid "  (%d) Existing key\n"
+msgstr "   (2) 暗号化鍵\n"
+
+#, fuzzy
+msgid "Enter the keygrip: "
+msgstr "署名注釈: "
+
+msgid "Not a valid keygrip (expecting 40 hex digits)\n"
+msgstr ""
+
+#, fuzzy
+msgid "No key with this keygrip\n"
+msgstr "%d番のユーザーIDはありません\n"
+
 #, c-format
 msgid "%s keys may be between %u and %u bits long.\n"
 msgstr ""
@@ -3447,6 +3639,11 @@ msgstr "どの鍵長にしますか? (1024) "
 #, c-format
 msgid "Requested keysize is %u bits\n"
 msgstr "要求された鍵長は%uビット\n"
+
+#, fuzzy, c-format
+#| msgid "rounded up to %u bits\n"
+msgid "rounded to %u bits\n"
+msgstr "%uビットに丸めます\n"
 
 msgid ""
 "Please specify how long the key should be valid.\n"
@@ -3619,6 +3816,9 @@ msgid ""
 "encryption key."
 msgstr "パスフレーズを入力してください。これは秘密の文章のことです \n"
 
+msgid "passphrase not correctly repeated; try again"
+msgstr "パスフレーズをちゃんと繰り返していません。再入力してください"
+
 #, c-format
 msgid "%s.\n"
 msgstr "%s.\n"
@@ -3652,28 +3852,12 @@ msgid "writing public key to '%s'\n"
 msgstr "「%s」へ公開鍵を書き込みます\n"
 
 #, c-format
-msgid "writing secret key stub to '%s'\n"
-msgstr "「%s」へ秘密鍵スタブを書き込みます\n"
-
-#, c-format
-msgid "writing secret key to '%s'\n"
-msgstr "「%s」へ秘密鍵を書き込みます\n"
-
-#, c-format
 msgid "no writable public keyring found: %s\n"
 msgstr "書込み可能な公開鍵輪が見つかりません: %s\n"
 
 #, c-format
-msgid "no writable secret keyring found: %s\n"
-msgstr "書込み可能な秘密鍵輪が見つかりません: %s\n"
-
-#, c-format
 msgid "error writing public keyring '%s': %s\n"
 msgstr "公開鍵輪「%s」の書込みエラー: %s\n"
-
-#, c-format
-msgid "error writing secret keyring '%s': %s\n"
-msgstr "秘密鍵輪「%s」の書込みエラー: %s\n"
 
 msgid "public and secret key created and signed.\n"
 msgstr "公開鍵と秘密鍵を作成し、署名しました。\n"
@@ -3702,6 +3886,13 @@ msgstr "鍵は%lu秒未来にできました (時間旅行か時計の障害でしょう)\n"
 
 msgid "NOTE: creating subkeys for v3 keys is not OpenPGP compliant\n"
 msgstr "注意: v3鍵の副鍵の作成は、OpenPGPに適合しません\n"
+
+msgid "Secret parts of primary key are not available.\n"
+msgstr "主鍵の秘密部分が得られません。\n"
+
+#, fuzzy
+msgid "Secret parts of primary key are stored on-card.\n"
+msgstr "主鍵の秘密部分が得られません。\n"
 
 msgid "Really create? (y/N) "
 msgstr "本当に作成しますか? (y/N) "
@@ -3763,20 +3954,6 @@ msgstr "         カードの通番 ="
 msgid "renaming '%s' to '%s' failed: %s\n"
 msgstr "「%s」から「%s」への移動に失敗: %s\n"
 
-msgid "WARNING: 2 files with confidential information exists.\n"
-msgstr "警告: 信用情報をもった2つのファイルが存在します。\n"
-
-#, c-format
-msgid "%s is the unchanged one\n"
-msgstr "%sは変更のない方です\n"
-
-#, c-format
-msgid "%s is the new one\n"
-msgstr "%sは新しい方です\n"
-
-msgid "Please fix this possible security flaw\n"
-msgstr "この潜在的な安全上の欠陥を修正してください\n"
-
 #, c-format
 msgid "caching keyring '%s'\n"
 msgstr "鍵輪「%s」をキャッシュします\n"
@@ -3831,83 +4008,6 @@ msgid "invalid keyserver protocol (us %d!=handler %d)\n"
 msgstr "無効な鍵サーバー・プロトコルです (us %d!=handler %d)\n"
 
 #, c-format
-msgid "key \"%s\" not found on keyserver\n"
-msgstr "鍵“%s”が鍵サーバーに見つかりません\n"
-
-msgid "key not found on keyserver\n"
-msgstr "鍵が鍵サーバーに見つかりません\n"
-
-#, c-format
-msgid "requesting key %s from %s server %s\n"
-msgstr "鍵%sを%sからサーバー%sに要求\n"
-
-#, c-format
-msgid "requesting key %s from %s\n"
-msgstr "鍵%sを%sに要求\n"
-
-#, fuzzy, c-format
-msgid "searching for names from %s server %s\n"
-msgstr "“%s”を%sサーバー%sから検索\n"
-
-#, fuzzy, c-format
-msgid "searching for names from %s\n"
-msgstr "“%s”をサーバー%sから検索\n"
-
-#, c-format
-msgid "sending key %s to %s server %s\n"
-msgstr "鍵%sを%sサーバー%sへ送信\n"
-
-#, c-format
-msgid "sending key %s to %s\n"
-msgstr "鍵%sを%sへ送信\n"
-
-#, c-format
-msgid "searching for \"%s\" from %s server %s\n"
-msgstr "“%s”を%sサーバー%sから検索\n"
-
-#, c-format
-msgid "searching for \"%s\" from %s\n"
-msgstr "“%s”をサーバー%sから検索\n"
-
-msgid "no keyserver action!\n"
-msgstr "鍵サーバー・アクションがありません!\n"
-
-#, c-format
-msgid "WARNING: keyserver handler from a different version of GnuPG (%s)\n"
-msgstr "警告: 別版 (%s) のGnuPGの鍵サーバー・ハンドラ\n"
-
-msgid "keyserver did not send VERSION\n"
-msgstr "鍵サーバーはVERSIONを送信しませんでした\n"
-
-msgid "no keyserver known (use option --keyserver)\n"
-msgstr "既知の鍵サーバーがありません (オプション--keyserverを使いましょう)\n"
-
-msgid "external keyserver calls are not supported in this build\n"
-msgstr "この構築では、外部鍵サーバーの呼出しはサポートしていません\n"
-
-#, c-format
-msgid "no handler for keyserver scheme '%s'\n"
-msgstr "鍵サーバー・スキーム「%s」用のハンドラがありません\n"
-
-#, c-format
-msgid "action '%s' not supported with keyserver scheme '%s'\n"
-msgstr "操作「%s」は、鍵サーバー・スキーム「%s」でサポートされていません\n"
-
-#, fuzzy, c-format
-msgid "%s does not support handler version %d\n"
-msgstr "gpgkeys_%sは、ハンドラ%d版をサポートしません\n"
-
-msgid "keyserver timed out\n"
-msgstr "鍵サーバーのタイムアウト\n"
-
-msgid "keyserver internal error\n"
-msgstr "鍵サーバーの内部エラー\n"
-
-#, c-format
-msgid "keyserver communications error: %s\n"
-msgstr "鍵サーバー通信エラー: %s\n"
-
-#, c-format
 msgid "\"%s\" not a key ID: skipping\n"
 msgstr "“%s”鍵IDではありません: とばします\n"
 
@@ -3923,12 +4023,43 @@ msgstr "1本の鍵を%sから回復\n"
 msgid "refreshing %d keys from %s\n"
 msgstr "%d本の鍵を%sから回復\n"
 
-#, fuzzy, c-format
-msgid "WARNING: unable to fetch URI %s: %s\n"
-msgstr "警告: 鍵%sを%s経由で回復できません: %s\n"
+msgid "no keyserver known (use option --keyserver)\n"
+msgstr "既知の鍵サーバーがありません (オプション--keyserverを使いましょう)\n"
+
+#, c-format
+msgid "key \"%s\" not found on keyserver\n"
+msgstr "鍵“%s”が鍵サーバーに見つかりません\n"
+
+msgid "key not found on keyserver\n"
+msgstr "鍵が鍵サーバーに見つかりません\n"
+
+#, c-format
+msgid "requesting key %s from %s server %s\n"
+msgstr "鍵%sを%sからサーバー%sに要求\n"
+
+#, c-format
+msgid "requesting key %s from %s\n"
+msgstr "鍵%sを%sに要求\n"
+
+#, c-format
+msgid "skipped \"%s\": %s\n"
+msgstr "“%s”をとばします: %s\n"
+
+#, c-format
+msgid "sending key %s to %s server %s\n"
+msgstr "鍵%sを%sサーバー%sへ送信\n"
+
+#, c-format
+msgid "sending key %s to %s\n"
+msgstr "鍵%sを%sへ送信\n"
 
 #, fuzzy, c-format
-msgid "WARNING: unable to parse URI %s\n"
+#| msgid "requesting key %s from %s\n"
+msgid "requesting key from '%s'\n"
+msgstr "鍵%sを%sに要求\n"
+
+#, fuzzy, c-format
+msgid "WARNING: unable to fetch URI %s: %s\n"
 msgstr "警告: 鍵%sを%s経由で回復できません: %s\n"
 
 #, c-format
@@ -4126,13 +4257,6 @@ msgstr "%s署名、要約アルゴリズム %s\n"
 msgid "WARNING: digest algorithm %s is deprecated\n"
 msgstr "警告: 要約アルゴリズム %s (%d) の強制が、受取人の選好と対立します\n"
 
-msgid "the IDEA cipher plugin is not present\n"
-msgstr "IDEA暗号法のプラグインがありません\n"
-
-#, fuzzy, c-format
-msgid "please see %s for more information\n"
-msgstr "詳細はhttp://www.gnupg.org/faq.htmlをご覧ください\n"
-
 #, c-format
 msgid "%s:%d: deprecated option \"%s\"\n"
 msgstr "%s:%d: 問題視されているオプション“%s”\n"
@@ -4176,6 +4300,9 @@ msgstr "あいまいなオプション「%s」\n"
 msgid "unknown option '%s'\n"
 msgstr "未知のオプション「%s」\n"
 
+msgid "ECDSA public key is expected to be in SEC encoding multiple of 8 bits\n"
+msgstr ""
+
 #, c-format
 msgid "File '%s' exists. "
 msgstr "ファイル「%s」は既に存在します。"
@@ -4216,6 +4343,10 @@ msgstr "警告: 潜在的に剣呑な対称暗号化セッション鍵です\n"
 msgid "subpacket of type %d has critical bit set\n"
 msgstr "型%dの下位パケットにクリティカル・ビットを発見\n"
 
+#, fuzzy, c-format
+msgid "problem with the agent: %s\n"
+msgstr "エージェントに障害: エージェントが0x%lxを返却\n"
+
 #, c-format
 msgid " (main key ID %s)"
 msgstr " (主鍵ID %s)"
@@ -4238,10 +4369,6 @@ msgstr "パスフレーズを入力\n"
 msgid "cancelled by user\n"
 msgstr "ユーザーによる取消し\n"
 
-#, fuzzy, c-format
-msgid "problem with the agent: %s\n"
-msgstr "エージェントに障害: エージェントが0x%lxを返却\n"
-
 #, c-format
 msgid ""
 "You need a passphrase to unlock the secret key for\n"
@@ -4257,6 +4384,33 @@ msgstr "%uビット%s鍵, ID %s作成日付は%s"
 #, c-format
 msgid "         (subkey on main key ID %s)"
 msgstr "         (主鍵ID %s の副鍵)"
+
+#, fuzzy
+msgid ""
+"Please enter the passphrase to unlock the secret key for the OpenPGP "
+"certificate:"
+msgstr ""
+"次のユーザーの秘密鍵のロックを解除するにはパスフレーズがいります:\n"
+"\"%.*s\"\n"
+"%uビット%s鍵, ID %s作成日付は%s%s\n"
+
+#, fuzzy
+msgid ""
+"Please enter the passphrase to import the secret key for the OpenPGP "
+"certificate:"
+msgstr ""
+"次のユーザーの秘密鍵のロックを解除するにはパスフレーズがいります:\n"
+"\"%.*s\"\n"
+"%uビット%s鍵, ID %s作成日付は%s%s\n"
+
+#, fuzzy, c-format
+#| msgid "%u-bit %s key, ID %s, created %s"
+msgid ""
+"%s\n"
+"\"%.*s\"\n"
+"%u-bit %s key, ID %s,\n"
+"created %s%s.\n"
+msgstr "%uビット%s鍵, ID %s作成日付は%s"
 
 msgid ""
 "\n"
@@ -4316,6 +4470,16 @@ msgstr "失効理由: "
 msgid "revocation comment: "
 msgstr "失効のコメント: "
 
+#. TRANSLATORS: These are the allowed answers in lower and
+#. uppercase.  Below you will find the matching strings which
+#. should be translated accordingly and the letter changed to
+#. match the one in the answer string.
+#.
+#. i = please show me more information
+#. m = back to the main menu
+#. s = skip this key
+#. q = quit
+#.
 msgid "iImMqQsS"
 msgstr "iImMqQsS"
 
@@ -4456,6 +4620,10 @@ msgid "%s: skipped: %s\n"
 msgstr "%s: スキップ: %s\n"
 
 #, c-format
+msgid "%s: skipped: public key is disabled\n"
+msgstr "%s: スキップ: 公開鍵は使用禁止です\n"
+
+#, c-format
 msgid "%s: skipped: public key already present\n"
 msgstr "%s: スキップ: 公開鍵はもうあります\n"
 
@@ -4487,10 +4655,6 @@ msgstr "スキップ: 公開鍵はもう設定済みです\n"
 #, c-format
 msgid "unknown default recipient \"%s\"\n"
 msgstr "既定の受取人“%s”が見つかりません\n"
-
-#, c-format
-msgid "%s: skipped: public key is disabled\n"
-msgstr "%s: スキップ: 公開鍵は使用禁止です\n"
 
 msgid "no valid addressees\n"
 msgstr "有効な宛先がありません\n"
@@ -4588,21 +4752,8 @@ msgstr "“%s”用の失効鍵が見つかりません\n"
 msgid "secret key \"%s\" not found: %s\n"
 msgstr "秘密鍵“%s”が見つかりません: %s\n"
 
-#, c-format
-msgid "no corresponding public key: %s\n"
-msgstr "対応する公開鍵がありません: %s\n"
-
-msgid "public key does not match secret key!\n"
-msgstr "公開鍵と秘密鍵が照合しません!\n"
-
 msgid "Create a revocation certificate for this key? (y/N) "
 msgstr "この鍵にたいする失効証明書を作成しますか? (y/N) "
-
-msgid "unknown protection algorithm\n"
-msgstr "未知の保護アルゴリズムです\n"
-
-msgid "NOTE: This key is not protected!\n"
-msgstr "注意: この鍵は保護されていません!\n"
 
 msgid ""
 "Revocation certificate created.\n"
@@ -4644,30 +4795,6 @@ msgstr "(説明はありません)\n"
 msgid "Is this okay? (y/N) "
 msgstr "よろしいですか? (y/N) "
 
-msgid "secret key parts are not available\n"
-msgstr "秘密部分が得られません\n"
-
-#, c-format
-msgid "protection algorithm %d%s is not supported\n"
-msgstr "保護アルゴリズム%d%sはサポートしていません\n"
-
-#, c-format
-msgid "protection digest %d is not supported\n"
-msgstr "保護要約%dはサポートしていません\n"
-
-msgid "Invalid passphrase; please try again"
-msgstr "無効なパスフレーズです。再入力してください"
-
-#, c-format
-msgid "%s ...\n"
-msgstr "%s ...\n"
-
-msgid "WARNING: Weak key detected - please change passphrase again.\n"
-msgstr "警告: 弱い鍵を検出しました。パスフレーズを変更してください。\n"
-
-msgid "generating the deprecated 16-bit checksum for secret key protection\n"
-msgstr "問題視された16ビットのチェックサムを秘密鍵の保護に生成\n"
-
 msgid "weak key created - retrying\n"
 msgstr "弱い鍵ができました - 再実行\n"
 
@@ -4675,15 +4802,12 @@ msgstr "弱い鍵ができました - 再実行\n"
 msgid "cannot avoid weak key for symmetric cipher; tried %d times!\n"
 msgstr "対称暗号法の弱い鍵を回避することができません。%d回試みました!\n"
 
-msgid "DSA requires the hash length to be a multiple of 8 bits\n"
+#, c-format
+msgid "%s key %s uses an unsafe (%zu bit) hash\n"
 msgstr ""
 
 #, c-format
-msgid "DSA key %s uses an unsafe (%u bit) hash\n"
-msgstr ""
-
-#, c-format
-msgid "DSA key %s requires a %u bit or larger hash\n"
+msgid "%s key %s requires a %zu bit or larger hash (hash is %s)\n"
 msgstr ""
 
 msgid "WARNING: signature digest conflict in message\n"
@@ -4784,10 +4908,6 @@ msgstr ""
 #, c-format
 msgid "skipped \"%s\": duplicated\n"
 msgstr "“%s”をとばします: 重複\n"
-
-#, c-format
-msgid "skipped \"%s\": %s\n"
-msgstr "“%s”をとばします: %s\n"
 
 msgid "skipped: secret key already present\n"
 msgstr "スキップ: 秘密鍵はもうあります\n"
@@ -4987,6 +5107,14 @@ msgstr "未知の信用モデル (%d) は使えません - %s信用モデルを仮定\n"
 msgid "using %s trust model\n"
 msgstr "%s信用モデルを使用\n"
 
+#. TRANSLATORS: these strings are similar to those in
+#. trust_value_to_string(), but are a fixed length.  This is needed to
+#. make attractive information listings where columns line up
+#. properly.  The value "10" should be the length of the strings you
+#. choose to translate to.  This is the length in printable columns.
+#. It gets passed to atoi() so everything after the number is
+#. essentially a comment and need not be translated.  Either key and
+#. uid are both NULL, or neither are NULL.
 msgid "10 translator see trustdb.c:uid_trust_string_fixed"
 msgstr ""
 
@@ -5099,116 +5227,6 @@ msgstr "入力の%u行目が長すぎるか、LFがないようです\n"
 msgid "can't open fd %d: %s\n"
 msgstr "「%s」が開けません: %s\n"
 
-#, fuzzy
-msgid "argument not expected"
-msgstr "管理コマンドは禁止されています\n"
-
-#, fuzzy
-msgid "read error"
-msgstr "ファイルの読出しエラー"
-
-#, fuzzy
-msgid "keyword too long"
-msgstr "行が長すぎます"
-
-#, fuzzy
-msgid "missing argument"
-msgstr "無効な指定です"
-
-#, fuzzy
-msgid "invalid command"
-msgstr "管理専用コマンド\n"
-
-#, fuzzy
-msgid "invalid alias definition"
-msgstr "無効な一覧オプションです\n"
-
-#, fuzzy
-msgid "out of core"
-msgstr "未処理"
-
-#, fuzzy
-msgid "invalid option"
-msgstr "無効な一覧オプションです\n"
-
-#, c-format
-msgid "missing argument for option \"%.50s\"\n"
-msgstr ""
-
-#, c-format
-msgid "option \"%.50s\" does not expect an argument\n"
-msgstr ""
-
-#, fuzzy, c-format
-msgid "invalid command \"%.50s\"\n"
-msgstr "無効なコマンド (“help”を参照)\n"
-
-#, c-format
-msgid "option \"%.50s\" is ambiguous\n"
-msgstr ""
-
-#, c-format
-msgid "command \"%.50s\" is ambiguous\n"
-msgstr ""
-
-#, fuzzy
-msgid "out of core\n"
-msgstr "未処理"
-
-#, fuzzy, c-format
-msgid "invalid option \"%.50s\"\n"
-msgstr "無効な一覧オプションです\n"
-
-#, c-format
-msgid "you found a bug ... (%s:%d)\n"
-msgstr "バグを発見 ... (%s:%d)\n"
-
-#, fuzzy, c-format
-msgid "error loading '%s': %s\n"
-msgstr "「%s」の読出しエラー: %s\n"
-
-#, c-format
-msgid "conversion from '%s' to '%s' not available\n"
-msgstr ""
-
-#, fuzzy, c-format
-msgid "iconv_open failed: %s\n"
-msgstr "署名に失敗しました: %s\n"
-
-#, fuzzy, c-format
-msgid "conversion from '%s' to '%s' failed: %s\n"
-msgstr "「%s」から「%s」への移動に失敗: %s\n"
-
-#, fuzzy, c-format
-msgid "failed to create temporary file '%s': %s\n"
-msgstr "ディレクトリー「%s」が作成できません: %s\n"
-
-#, fuzzy, c-format
-msgid "error writing to '%s': %s\n"
-msgstr "鍵輪「%s」の書込みエラー: %s\n"
-
-#, c-format
-msgid "removing stale lockfile (created by %d)\n"
-msgstr ""
-
-msgid " - probably dead - removing lock"
-msgstr ""
-
-#, fuzzy, c-format
-msgid "waiting for lock (held by %d%s) %s...\n"
-msgstr "「%s」へ秘密鍵を書き込みます\n"
-
-msgid "(deadlock?) "
-msgstr ""
-
-#, fuzzy, c-format
-msgid "lock '%s' not made: %s\n"
-msgstr "公開鍵%sが見つかりません: %s\n"
-
-#, fuzzy, c-format
-msgid "waiting for lock %s...\n"
-msgstr "「%s」へ秘密鍵を書き込みます\n"
-
 msgid "set debugging flags"
 msgstr ""
 
@@ -5219,10 +5237,11 @@ msgstr ""
 msgid "Usage: kbxutil [options] [files] (-h for help)"
 msgstr "使い方: gpg [オプション] [ファイル] (ヘルプは -h)"
 
+#, fuzzy
 msgid ""
 "Syntax: kbxutil [options] [files]\n"
-"list, export, import Keybox data\n"
-msgstr ""
+"List, export, import Keybox data\n"
+msgstr "使い方: gpg [オプション] [ファイル] (ヘルプは -h)"
 
 #, c-format
 msgid "RSA modulus missing or not of size %d bits\n"
@@ -5351,6 +5370,9 @@ msgstr "PIN [署名済: %lu]"
 msgid "Reset Code is too short; minimum length is %d\n"
 msgstr "CHV%dのPINが短すぎます。最短で%d\n"
 
+#. TRANSLATORS: Do not translate the "|*|" prefixes but
+#. keep it at the start of the string.  We need this elsewhere
+#. to get some infos on the string.
 msgid "|RN|New Reset Code"
 msgstr ""
 
@@ -5361,6 +5383,14 @@ msgstr "|A|新しいAdmin PIN"
 #, fuzzy
 msgid "|N|New PIN"
 msgstr "新しいPIN"
+
+#, fuzzy
+msgid "||Please enter the Admin PIN and New Admin PIN"
+msgstr "PIN [署名済: %lu]"
+
+#, fuzzy
+msgid "||Please enter the PIN and New PIN"
+msgstr "PIN [署名済: %lu]"
 
 msgid "error reading application data\n"
 msgstr "アプリケーション・データの読出しエラー\n"
@@ -5495,21 +5525,6 @@ msgid "failed to proxy %s inquiry to client\n"
 msgstr ""
 
 #, c-format
-msgid "no running dirmngr - starting '%s'\n"
-msgstr ""
-
-#, fuzzy
-msgid "malformed DIRMNGR_INFO environment variable\n"
-msgstr "GPG_AGENT_INFO環境変数の書式が正しくありません\n"
-
-#, fuzzy, c-format
-msgid "dirmngr protocol version %d is not supported\n"
-msgstr "gpg-agentプロトコル・バージョン%dはサポートしていません\n"
-
-msgid "can't connect to the dirmngr - trying fall back\n"
-msgstr ""
-
-#, c-format
 msgid "validation model requested by certificate: %s"
 msgstr ""
 
@@ -5561,7 +5576,7 @@ msgid "dirmngr cache-only key lookup failed: %s\n"
 msgstr "鍵の読出しに失敗しました: %s\n"
 
 #, fuzzy
-msgid "failed to allocated keyDB handle\n"
+msgid "failed to allocate keyDB handle\n"
 msgstr "鍵の保管に失敗しました: %s\n"
 
 #, fuzzy
@@ -5704,10 +5719,6 @@ msgid "validation model used: %s"
 msgstr ""
 
 #, c-format
-msgid "%s key uses an unsafe (%u bit) hash\n"
-msgstr ""
-
-#, c-format
 msgid "a %u bit hash is not valid for a %u bit %s key\n"
 msgstr ""
 
@@ -5751,16 +5762,16 @@ msgstr ""
 msgid "error getting key usage information: %s\n"
 msgstr "現行鍵情報の取得エラー: %s\n"
 
-msgid "certificate should have not been used for certification\n"
+msgid "certificate should not have been used for certification\n"
 msgstr ""
 
-msgid "certificate should have not been used for OCSP response signing\n"
+msgid "certificate should not have been used for OCSP response signing\n"
 msgstr ""
 
-msgid "certificate should have not been used for encryption\n"
+msgid "certificate should not have been used for encryption\n"
 msgstr ""
 
-msgid "certificate should have not been used for signing\n"
+msgid "certificate should not have been used for signing\n"
 msgstr ""
 
 msgid "certificate is not usable for encryption\n"
@@ -5794,6 +5805,43 @@ msgid "line %d: not a valid email address\n"
 msgstr "有効な電子メール・アドレスではありません\n"
 
 #, fuzzy, c-format
+msgid "line %d: invalid serial number\n"
+msgstr "無効なハッシュ・アルゴリズム「%s」です\n"
+
+#, fuzzy, c-format
+msgid "line %d: invalid issuer name label '%.*s'\n"
+msgstr "無効なハッシュ・アルゴリズム「%s」です\n"
+
+#, fuzzy, c-format
+msgid "line %d: invalid issuer name '%s' at pos %d\n"
+msgstr "無効なハッシュ・アルゴリズム「%s」です\n"
+
+#, fuzzy, c-format
+msgid "line %d: invalid date given\n"
+msgstr "無効なハッシュ・アルゴリズム「%s」です\n"
+
+#, fuzzy, c-format
+msgid "line %d: error getting signing key by keygrip '%s': %s\n"
+msgstr "鍵輪「%s」の作成エラー: %s\n"
+
+#, fuzzy, c-format
+msgid "line %d: invalid hash algorithm given\n"
+msgstr "無効なハッシュ・アルゴリズム「%s」です\n"
+
+#, fuzzy, c-format
+msgid "line %d: invalid authority-key-id\n"
+msgstr "無効なハッシュ・アルゴリズム「%s」です\n"
+
+#, fuzzy, c-format
+#| msgid "key %s: invalid subkey binding\n"
+msgid "line %d: invalid subject-key-id\n"
+msgstr "鍵%s: 無効な副鍵の対応です\n"
+
+#, fuzzy, c-format
+msgid "line %d: invalid extension syntax\n"
+msgstr "無効なハッシュ・アルゴリズム「%s」です\n"
+
+#, fuzzy, c-format
 msgid "line %d: error reading key '%s' from card: %s\n"
 msgstr "鍵輪「%s」の作成エラー: %s\n"
 
@@ -5821,17 +5869,6 @@ msgstr "   (2) 暗号化鍵\n"
 #, c-format
 msgid "   (%d) Existing key from card\n"
 msgstr ""
-
-#, fuzzy
-msgid "Enter the keygrip: "
-msgstr "署名注釈: "
-
-msgid "Not a valid keygrip (expecting 40 hex digits)\n"
-msgstr ""
-
-#, fuzzy
-msgid "No key with this keygrip\n"
-msgstr "%d番のユーザーIDはありません\n"
 
 #, fuzzy, c-format
 msgid "error reading the card: %s\n"
@@ -5906,10 +5943,26 @@ msgstr "予備の説明を入力。空行で終了:\n"
 msgid "Enter URIs"
 msgstr "PINの入力: "
 
-msgid "Parameters to be used for the certificate request:\n"
+#, fuzzy
+#| msgid "Create a designated revocation certificate for this key? (y/N) "
+msgid "Create self-signed certificate? (y/N) "
+msgstr "この鍵にたいする指名失効証明書を作成しますか? (y/N) "
+
+msgid "These parameters are used:\n"
 msgstr ""
 
-msgid "Now creating certificate request.  This may take a while ...\n"
+msgid "Now creating self-signed certificate.  "
+msgstr ""
+
+#, fuzzy
+#| msgid "Revocation certificate created.\n"
+msgid "Now creating certificate request.  "
+msgstr "失効証明書を作成。\n"
+
+msgid "This may take a while ...\n"
+msgstr ""
+
+msgid "Ready.\n"
 msgstr ""
 
 msgid "Ready.  You should now send this request to your CA.\n"
@@ -5975,10 +6028,6 @@ msgid "invoke gpg-protect-tool"
 msgstr ""
 
 #, fuzzy
-msgid "change a passphrase"
-msgstr "パスフレーズの変更"
-
-#, fuzzy
 msgid "create base-64 encoded output"
 msgstr "ASCII形式の包装を作成"
 
@@ -5989,9 +6038,6 @@ msgid "assume input is in base-64 format"
 msgstr ""
 
 msgid "assume input is in binary format"
-msgstr ""
-
-msgid "use system's dirmngr if available"
 msgstr ""
 
 msgid "never consult a CRL"
@@ -6056,8 +6102,8 @@ msgstr "使い方: gpg [オプション] [ファイル] (ヘルプは -h)"
 #, fuzzy
 msgid ""
 "Syntax: gpgsm [options] [files]\n"
-"sign, check, encrypt or decrypt using the S/MIME protocol\n"
-"default operation depends on the input data\n"
+"Sign, check, encrypt or decrypt using the S/MIME protocol\n"
+"Default operation depends on the input data\n"
 msgstr ""
 "書式: gpg [オプション] [ファイル]\n"
 "署名、検査、暗号化や復号\n"
@@ -6091,9 +6137,6 @@ msgstr "  s = この鍵はとばす\n"
 msgid "could not parse keyserver\n"
 msgstr "鍵サーバーのURLを解析不能\n"
 
-msgid "WARNING: running with faked system time: "
-msgstr ""
-
 #, c-format
 msgid "importing common certificates '%s'\n"
 msgstr ""
@@ -6115,10 +6158,6 @@ msgstr "失効証明書を生成"
 
 msgid "basic certificate checks failed - not imported\n"
 msgstr ""
-
-#, fuzzy
-msgid "failed to allocate keyDB handle\n"
-msgstr "鍵の保管に失敗しました: %s\n"
 
 #, fuzzy, c-format
 msgid "error getting stored flags: %s\n"
@@ -6242,6 +6281,1279 @@ msgstr "                別名“%s”"
 msgid "This is a qualified signature\n"
 msgstr "自己署名になるでしょう。\n"
 
+#, fuzzy, c-format
+msgid "can't initialize certificate cache lock: %s\n"
+msgstr "作成された署名の検査に失敗しました: %s\n"
+
+#, c-format
+msgid "can't acquire read lock on the certificate cache: %s\n"
+msgstr ""
+
+#, c-format
+msgid "can't acquire write lock on the certificate cache: %s\n"
+msgstr ""
+
+#, c-format
+msgid "can't release lock on the certificate cache: %s\n"
+msgstr ""
+
+#, c-format
+msgid "dropping %u certificates from the cache\n"
+msgstr ""
+
+#, fuzzy, c-format
+#| msgid "can't create directory '%s': %s\n"
+msgid "can't access directory '%s': %s\n"
+msgstr "ディレクトリー「%s」が作成できません: %s\n"
+
+#, fuzzy, c-format
+#| msgid "can't create '%s': %s\n"
+msgid "can't parse certificate '%s': %s\n"
+msgstr "「%s」が作成できません: %s\n"
+
+#, fuzzy, c-format
+msgid "certificate '%s' already cached\n"
+msgstr "選好「%s」の重複\n"
+
+#, fuzzy, c-format
+msgid "trusted certificate '%s' loaded\n"
+msgstr "失効証明書を作成。\n"
+
+#, fuzzy, c-format
+msgid "certificate '%s' loaded\n"
+msgstr "選好「%s」の重複\n"
+
+#, fuzzy, c-format
+msgid "  SHA1 fingerprint = %s\n"
+msgstr "CAの指紋: "
+
+msgid "   issuer ="
+msgstr ""
+
+msgid "  subject ="
+msgstr ""
+
+#, fuzzy, c-format
+msgid "error loading certificate '%s': %s\n"
+msgstr "通番の取得エラー: %s\n"
+
+#, fuzzy, c-format
+msgid "permanently loaded certificates: %u\n"
+msgstr "不正な証明書です"
+
+#, fuzzy, c-format
+msgid "    runtime cached certificates: %u\n"
+msgstr "通番の取得エラー: %s\n"
+
+#, fuzzy
+msgid "certificate already cached\n"
+msgstr "失効証明書を作成。\n"
+
+#, fuzzy
+msgid "certificate cached\n"
+msgstr "選好「%s」の重複\n"
+
+#, fuzzy, c-format
+msgid "error caching certificate: %s\n"
+msgstr "通番の取得エラー: %s\n"
+
+#, fuzzy, c-format
+msgid "invalid SHA1 fingerprint string '%s'\n"
+msgstr "エラー: 無効な形式の指紋。\n"
+
+#, fuzzy, c-format
+msgid "error fetching certificate by S/N: %s\n"
+msgstr "通番の取得エラー: %s\n"
+
+#, fuzzy, c-format
+msgid "error fetching certificate by subject: %s\n"
+msgstr "通番の取得エラー: %s\n"
+
+#, fuzzy
+msgid "no issuer found in certificate\n"
+msgstr "失効証明書を生成"
+
+#, fuzzy, c-format
+msgid "error getting authorityKeyIdentifier: %s\n"
+msgstr "新しいPINの取得エラー: %s\n"
+
+#, fuzzy, c-format
+#| msgid "can't create directory '%s': %s\n"
+msgid "creating directory '%s'\n"
+msgstr "ディレクトリー「%s」が作成できません: %s\n"
+
+#, fuzzy, c-format
+msgid "error creating directory '%s': %s\n"
+msgstr "鍵輪「%s」の作成エラー: %s\n"
+
+#, fuzzy, c-format
+msgid "ignoring database dir '%s'\n"
+msgstr "後尾の行にエラーがあります\n"
+
+#, fuzzy, c-format
+#| msgid "error reading '%s': %s\n"
+msgid "error reading directory '%s': %s\n"
+msgstr "「%s」の読出しエラー: %s\n"
+
+#, fuzzy, c-format
+msgid "removing cache file '%s'\n"
+msgstr "鍵の読出しに失敗しました: %s\n"
+
+#, fuzzy, c-format
+#| msgid "enarmoring failed: %s\n"
+msgid "not removing file '%s'\n"
+msgstr "包装に失敗しました: %s\n"
+
+#, fuzzy, c-format
+msgid "error closing cache file: %s\n"
+msgstr "「%s」でエラー: %s\n"
+
+#, fuzzy, c-format
+msgid "failed to open cache dir file '%s': %s\n"
+msgstr "「%s」が開けません: %s\n"
+
+#, fuzzy, c-format
+#| msgid "error creating keyring '%s': %s\n"
+msgid "error creating new cache dir file '%s': %s\n"
+msgstr "鍵輪「%s」の作成エラー: %s\n"
+
+#, fuzzy, c-format
+#| msgid "error writing secret keyring '%s': %s\n"
+msgid "error writing new cache dir file '%s': %s\n"
+msgstr "秘密鍵輪「%s」の書込みエラー: %s\n"
+
+#, fuzzy, c-format
+msgid "error closing new cache dir file '%s': %s\n"
+msgstr "「%s」でエラー: %s\n"
+
+#, fuzzy, c-format
+#| msgid "new configuration file '%s' created\n"
+msgid "new cache dir file '%s' created\n"
+msgstr "新しい構成ファイル「%s」ができました\n"
+
+#, fuzzy, c-format
+msgid "failed to re-open cache dir file '%s': %s\n"
+msgstr "ディレクトリー「%s」が作成できません: %s\n"
+
+#, c-format
+msgid "first record of '%s' is not the version\n"
+msgstr ""
+
+msgid "old version of cache directory - cleaning up\n"
+msgstr ""
+
+msgid "old version of cache directory - giving up\n"
+msgstr ""
+
+#, c-format
+msgid "extra field detected in crl record of '%s' line %u\n"
+msgstr ""
+
+#, fuzzy, c-format
+msgid "invalid line detected in '%s' line %u\n"
+msgstr "エラー: 無効な形式の指紋。\n"
+
+#, fuzzy, c-format
+msgid "duplicate entry detected in '%s' line %u\n"
+msgstr "失効証明書を作成。\n"
+
+#, c-format
+msgid "unsupported record type in '%s' line %u skipped\n"
+msgstr ""
+
+#, fuzzy, c-format
+msgid "invalid issuer hash in '%s' line %u\n"
+msgstr "エラー: 無効な形式の指紋。\n"
+
+#, fuzzy, c-format
+msgid "no issuer DN in '%s' line %u\n"
+msgstr "「%s」で読出しエラー: %s\n"
+
+#, fuzzy, c-format
+msgid "invalid timestamp in '%s' line %u\n"
+msgstr "エラー: 無効な形式の指紋。\n"
+
+#, fuzzy, c-format
+msgid "WARNING: invalid cache file hash in '%s' line %u\n"
+msgstr "エラー: 無効な形式の指紋。\n"
+
+msgid "detected errors in cache dir file\n"
+msgstr ""
+
+msgid "please check the reason and manually delete that file\n"
+msgstr ""
+
+#, fuzzy, c-format
+msgid "failed to create temporary cache dir file '%s': %s\n"
+msgstr "ディレクトリー「%s」が作成できません: %s\n"
+
+#, fuzzy, c-format
+msgid "error closing '%s': %s\n"
+msgstr "「%s」でエラー: %s\n"
+
+#, fuzzy, c-format
+#| msgid "renaming '%s' to '%s' failed: %s\n"
+msgid "error renaming '%s' to '%s': %s\n"
+msgstr "「%s」から「%s」への移動に失敗: %s\n"
+
+#, fuzzy, c-format
+#| msgid "can't access '%s': %s\n"
+msgid "can't hash '%s': %s\n"
+msgstr "「%s」にアクセスできません: %s\n"
+
+#, fuzzy, c-format
+msgid "error setting up MD5 hash context: %s\n"
+msgstr "「%s」の読出しエラー: %s\n"
+
+#, fuzzy, c-format
+#| msgid "error in '%s': %s\n"
+msgid "error hashing '%s': %s\n"
+msgstr "「%s」でエラー: %s\n"
+
+#, fuzzy, c-format
+msgid "invalid formatted checksum for '%s'\n"
+msgstr "エラー: 無効な形式の指紋。\n"
+
+msgid "too many open cache files; can't open anymore\n"
+msgstr ""
+
+#, fuzzy, c-format
+#| msgid "option file '%s': %s\n"
+msgid "opening cache file '%s'\n"
+msgstr "オプション・ファイル「%s」: %s\n"
+
+#, fuzzy, c-format
+msgid "error opening cache file '%s': %s\n"
+msgstr "「%s」でエラー: %s\n"
+
+#, c-format
+msgid "error initializing cache file '%s' for reading: %s\n"
+msgstr ""
+
+msgid "calling unlock_db_file on a closed file\n"
+msgstr ""
+
+msgid "calling unlock_db_file on an unlocked file\n"
+msgstr ""
+
+#, fuzzy, c-format
+msgid "failed to create a new cache object: %s\n"
+msgstr "%s: ハッシュ表の作成に失敗しました: %s\n"
+
+#, fuzzy, c-format
+#| msgid "No help available for '%s'"
+msgid "no CRL available for issuer id %s\n"
+msgstr "「%s」のヘルプはありません"
+
+#, c-format
+msgid "cached CRL for issuer id %s too old; update required\n"
+msgstr ""
+
+#, c-format
+msgid ""
+"force-crl-refresh active and %d minutes passed for issuer id %s; update "
+"required\n"
+msgstr ""
+
+#, c-format
+msgid "force-crl-refresh active for issuer id %s; update required\n"
+msgstr ""
+
+#, c-format
+msgid "available CRL for issuer ID %s can't be used\n"
+msgstr ""
+
+#, c-format
+msgid "cached CRL for issuer id %s tampered; we need to update\n"
+msgstr ""
+
+msgid "WARNING: invalid cache record length for S/N "
+msgstr ""
+
+#, fuzzy, c-format
+msgid "problem reading cache record for S/N %s: %s\n"
+msgstr "鍵輪「%s」の作成エラー: %s\n"
+
+#, c-format
+msgid "S/N %s is not valid; reason=%02X  date=%.15s\n"
+msgstr ""
+
+#, c-format
+msgid "S/N %s is valid, it is not listed in the CRL\n"
+msgstr ""
+
+#, fuzzy, c-format
+msgid "error getting data from cache file: %s\n"
+msgstr "新しいPINの取得エラー: %s\n"
+
+#, fuzzy, c-format
+#| msgid "invalid hash algorithm '%s'\n"
+msgid "unknown hash algorithm '%s'\n"
+msgstr "無効なハッシュ・アルゴリズム「%s」です\n"
+
+#, c-format
+msgid "gcry_md_open for algorithm %d failed: %s\n"
+msgstr ""
+
+#, fuzzy
+#| msgid "invalid response from agent\n"
+msgid "got an invalid S-expression from libksba\n"
+msgstr "エージェントからの無効な応答\n"
+
+#, fuzzy, c-format
+msgid "converting S-expression failed: %s\n"
+msgstr "署名に失敗しました: %s\n"
+
+#, fuzzy, c-format
+msgid "creating S-expression failed: %s\n"
+msgstr "鍵の読出しに失敗しました: %s\n"
+
+#, fuzzy, c-format
+#| msgid "build_packet failed: %s\n"
+msgid "ksba_crl_parse failed: %s\n"
+msgstr "build_packet に失敗しました: %s\n"
+
+#, fuzzy, c-format
+msgid "error getting update times of CRL: %s\n"
+msgstr "通番の取得エラー: %s\n"
+
+#, c-format
+msgid "update times of this CRL: this=%s next=%s\n"
+msgstr ""
+
+msgid "nextUpdate not given; assuming a validity period of one day\n"
+msgstr ""
+
+#, fuzzy, c-format
+#| msgid "error getting new PIN: %s\n"
+msgid "error getting CRL item: %s\n"
+msgstr "新しいPINの取得エラー: %s\n"
+
+#, fuzzy, c-format
+msgid "error inserting item into temporary cache file: %s\n"
+msgstr "%s: ディレクトリー・レコードの書込みエラー: %s\n"
+
+#, fuzzy, c-format
+msgid "no CRL issuer found in CRL: %s\n"
+msgstr "失効証明書を生成"
+
+msgid "locating CRL issuer certificate by authorityKeyIdentifier\n"
+msgstr ""
+
+#, fuzzy, c-format
+#| msgid "signature verification suppressed\n"
+msgid "CRL signature verification failed: %s\n"
+msgstr "署名の検証を省略\n"
+
+#, fuzzy, c-format
+msgid "error checking validity of CRL issuer certificate: %s\n"
+msgstr "作成された署名の検査に失敗しました: %s\n"
+
+#, fuzzy, c-format
+msgid "ksba_crl_new failed: %s\n"
+msgstr "鍵ブロックの削除に失敗しました: %s\n"
+
+#, fuzzy, c-format
+msgid "ksba_crl_set_reader failed: %s\n"
+msgstr "更新に失敗しました: %s\n"
+
+#, fuzzy, c-format
+msgid "removed stale temporary cache file '%s'\n"
+msgstr "ディレクトリー「%s」が作成できません: %s\n"
+
+#, fuzzy, c-format
+msgid "problem removing stale temporary cache file '%s': %s\n"
+msgstr "ディレクトリー「%s」が作成できません: %s\n"
+
+#, fuzzy, c-format
+msgid "error creating temporary cache file '%s': %s\n"
+msgstr "パスフレーズの作成エラー: %s\n"
+
+#, fuzzy, c-format
+#| msgid "update secret failed: %s\n"
+msgid "crl_parse_insert failed: %s\n"
+msgstr "秘密の更新に失敗しました: %s\n"
+
+#, fuzzy, c-format
+msgid "error finishing temporary cache file '%s': %s\n"
+msgstr "%s: ディレクトリー・レコードの書込みエラー: %s\n"
+
+#, fuzzy, c-format
+msgid "error closing temporary cache file '%s': %s\n"
+msgstr "パスフレーズの作成エラー: %s\n"
+
+#, c-format
+msgid "WARNING: new CRL still too old; it expired on %s - loading anyway\n"
+msgstr ""
+
+#, c-format
+msgid "new CRL still too old; it expired on %s\n"
+msgstr ""
+
+#, c-format
+msgid "unknown critical CRL extension %s\n"
+msgstr ""
+
+#, fuzzy, c-format
+msgid "error reading CRL extensions: %s\n"
+msgstr "「%s」の読出しエラー: %s\n"
+
+#, fuzzy, c-format
+msgid "creating cache file '%s'\n"
+msgstr "パスフレーズの作成エラー: %s\n"
+
+#, fuzzy, c-format
+#| msgid "renaming '%s' to '%s' failed: %s\n"
+msgid "problem renaming '%s' to '%s': %s\n"
+msgstr "「%s」から「%s」への移動に失敗: %s\n"
+
+msgid ""
+"updating the DIR file failed - cache entry will get lost with the next "
+"program start\n"
+msgstr ""
+
+#, c-format
+msgid "Begin CRL dump (retrieved via %s)\n"
+msgstr ""
+
+msgid ""
+" ERROR: The CRL will not be used because it was still too old after an "
+"update!\n"
+msgstr ""
+
+msgid ""
+" ERROR: The CRL will not be used due to an unknown critical extension!\n"
+msgstr ""
+
+msgid " ERROR: The CRL will not be used\n"
+msgstr ""
+
+msgid " ERROR: This cached CRL may have been tampered with!\n"
+msgstr ""
+
+#, fuzzy
+#| msgid "WARNING: invalid size of random_seed file - not used\n"
+msgid " WARNING: invalid cache record length\n"
+msgstr "警告: 無効な長さの random_seed ファイル - 使いません\n"
+
+#, fuzzy, c-format
+msgid "problem reading cache record: %s\n"
+msgstr "%s: 空きレコードの読出しエラー: %s\n"
+
+#, fuzzy, c-format
+#| msgid "error reading keyblock: %s\n"
+msgid "problem reading cache key: %s\n"
+msgstr "鍵ブロックの読出しエラー: %s\n"
+
+#, fuzzy, c-format
+msgid "error reading cache entry from db: %s\n"
+msgstr "「%s」の読出しエラー: %s\n"
+
+msgid "End CRL dump\n"
+msgstr ""
+
+#, fuzzy, c-format
+msgid "crl_fetch via DP failed: %s\n"
+msgstr "更新に失敗しました: %s\n"
+
+#, fuzzy, c-format
+msgid "crl_cache_insert via DP failed: %s\n"
+msgstr "作成された署名の検査に失敗しました: %s\n"
+
+#, fuzzy, c-format
+msgid "crl_cache_insert via issuer failed: %s\n"
+msgstr "鍵の読出しに失敗しました: %s\n"
+
+msgid "reader to file mapping table full - waiting\n"
+msgstr ""
+
+msgid "using \"http\" instead of \"https\"\n"
+msgstr ""
+
+#, c-format
+msgid "CRL access not possible due to disabled %s\n"
+msgstr ""
+
+#, fuzzy, c-format
+#| msgid "%s: error writing dir record: %s\n"
+msgid "error initializing reader object: %s\n"
+msgstr "%s: ディレクトリー・レコードの書込みエラー: %s\n"
+
+#, c-format
+msgid "URL '%s' redirected to '%s' (%u)\n"
+msgstr ""
+
+#, fuzzy
+#| msgid "too many cipher preferences\n"
+msgid "too many redirections\n"
+msgstr "多すぎる暗号法選好\n"
+
+#, fuzzy, c-format
+msgid "error retrieving '%s': %s\n"
+msgstr "「%s」の作成エラー: %s\n"
+
+#, fuzzy, c-format
+msgid "error retrieving '%s': http status %u\n"
+msgstr "「%s」の読出しエラー: %s\n"
+
+#, fuzzy, c-format
+msgid "certificate search not possible due to disabled %s\n"
+msgstr "秘密鍵“%s”が見つかりません: %s\n"
+
+msgid "use OCSP instead of CRLs"
+msgstr ""
+
+msgid "check whether a dirmngr is running"
+msgstr ""
+
+#, fuzzy
+msgid "add a certificate to the cache"
+msgstr "失効証明書を作成。\n"
+
+#, fuzzy
+msgid "validate a certificate"
+msgstr "不正な証明書です"
+
+#, fuzzy
+msgid "lookup a certificate"
+msgstr "不正な証明書です"
+
+#, fuzzy
+msgid "lookup only locally stored certificates"
+msgstr "不正な証明書です"
+
+msgid "expect an URL for --lookup"
+msgstr ""
+
+msgid "load a CRL into the dirmngr"
+msgstr ""
+
+msgid "special mode for use by Squid"
+msgstr ""
+
+#, fuzzy
+msgid "expect certificates in PEM format"
+msgstr "不正な証明書です"
+
+#, fuzzy
+#| msgid "Enter the user ID of the designated revoker: "
+msgid "force the use of the default OCSP responder"
+msgstr "指名失効者のユーザーIDを入力してください: "
+
+#, fuzzy
+#| msgid "Usage: gpg [options] [files] (-h for help)"
+msgid "Usage: dirmngr-client [options] [certfile|pattern] (-h for help)\n"
+msgstr "使い方: gpg [オプション] [ファイル] (ヘルプは -h)"
+
+msgid ""
+"Syntax: dirmngr-client [options] [certfile|pattern]\n"
+"Test an X.509 certificate against a CRL or do an OCSP check\n"
+"The process returns 0 if the certificate is valid, 1 if it is\n"
+"not valid and other error codes for general failures\n"
+msgstr ""
+
+#, fuzzy, c-format
+msgid "error reading certificate from stdin: %s\n"
+msgstr "通番の取得エラー: %s\n"
+
+#, fuzzy, c-format
+msgid "error reading certificate from '%s': %s\n"
+msgstr "「%s」の読出しエラー: %s\n"
+
+msgid "certificate too large to make any sense\n"
+msgstr ""
+
+#, fuzzy, c-format
+#| msgid "update failed: %s\n"
+msgid "lookup failed: %s\n"
+msgstr "更新に失敗しました: %s\n"
+
+#, fuzzy, c-format
+#| msgid "renaming '%s' to '%s' failed: %s\n"
+msgid "loading CRL '%s' failed: %s\n"
+msgstr "「%s」から「%s」への移動に失敗: %s\n"
+
+msgid "a dirmngr daemon is up and running\n"
+msgstr ""
+
+#, fuzzy, c-format
+msgid "validation of certificate failed: %s\n"
+msgstr "鍵ブロックの削除に失敗しました: %s\n"
+
+#, fuzzy
+msgid "certificate is valid\n"
+msgstr "選好「%s」の重複\n"
+
+#, fuzzy
+msgid "certificate has been revoked\n"
+msgstr "注意: 鍵は失効済みです"
+
+#, fuzzy, c-format
+msgid "certificate check failed: %s\n"
+msgstr "鍵ブロックの削除に失敗しました: %s\n"
+
+#, fuzzy, c-format
+#| msgid "can't stat '%s': %s\n"
+msgid "got status: '%s'\n"
+msgstr "「%s」を調べることができません: %s\n"
+
+#, fuzzy, c-format
+#| msgid "error writing secret keyring '%s': %s\n"
+msgid "error writing base64 encoding: %s\n"
+msgstr "秘密鍵輪「%s」の書込みエラー: %s\n"
+
+#, fuzzy, c-format
+msgid "failed to allocate assuan context: %s\n"
+msgstr "%s: ハッシュ表の作成に失敗しました: %s\n"
+
+msgid "apparently no running dirmngr\n"
+msgstr ""
+
+msgid "no running dirmngr - starting one\n"
+msgstr ""
+
+#, fuzzy
+msgid "malformed DIRMNGR_INFO environment variable\n"
+msgstr "GPG_AGENT_INFO環境変数の書式が正しくありません\n"
+
+#, fuzzy, c-format
+msgid "dirmngr protocol version %d is not supported\n"
+msgstr "gpg-agentプロトコル・バージョン%dはサポートしていません\n"
+
+msgid "can't connect to the dirmngr - trying fall back\n"
+msgstr ""
+
+#, fuzzy, c-format
+#| msgid "can't connect to '%s': %s\n"
+msgid "can't connect to the dirmngr: %s\n"
+msgstr "「%s」へ接続できません: %s\n"
+
+#, fuzzy, c-format
+msgid "unsupported inquiry '%s'\n"
+msgstr ""
+"\n"
+"サポートしているアルゴリズム:\n"
+
+msgid "absolute file name expected\n"
+msgstr ""
+
+#, fuzzy, c-format
+#| msgid "writing to '%s'\n"
+msgid "looking up '%s'\n"
+msgstr "「%s」への書込み\n"
+
+msgid "run as windows service (background)"
+msgstr ""
+
+msgid "list the contents of the CRL cache"
+msgstr ""
+
+#, fuzzy
+msgid "|FILE|load CRL from FILE into cache"
+msgstr "「%s」からオプションを読み出します\n"
+
+msgid "|URL|fetch a CRL from URL"
+msgstr ""
+
+msgid "shutdown the dirmngr"
+msgstr ""
+
+msgid "flush the cache"
+msgstr ""
+
+msgid "|FILE|write server mode logs to FILE"
+msgstr ""
+
+#, fuzzy
+#| msgid "Quit without saving? (y/N) "
+msgid "run without asking a user"
+msgstr "保存せずに終了しますか? (y/N) "
+
+msgid "force loading of outdated CRLs"
+msgstr ""
+
+msgid "allow sending OCSP requests"
+msgstr ""
+
+msgid "inhibit the use of HTTP"
+msgstr ""
+
+msgid "inhibit the use of LDAP"
+msgstr ""
+
+msgid "ignore HTTP CRL distribution points"
+msgstr ""
+
+msgid "ignore LDAP CRL distribution points"
+msgstr ""
+
+msgid "ignore certificate contained OCSP service URLs"
+msgstr ""
+
+msgid "|URL|redirect all HTTP requests to URL"
+msgstr ""
+
+msgid "|HOST|use HOST for LDAP queries"
+msgstr ""
+
+msgid "do not use fallback hosts with --ldap-proxy"
+msgstr ""
+
+#, fuzzy
+msgid "|FILE|read LDAP server list from FILE"
+msgstr "「%s」からオプションを読み出します\n"
+
+msgid "add new servers discovered in CRL distribution points to serverlist"
+msgstr ""
+
+msgid "|N|set LDAP timeout to N seconds"
+msgstr ""
+
+#, fuzzy
+msgid "|URL|use OCSP responder at URL"
+msgstr "鍵サーバーのURLを解析不能\n"
+
+msgid "|FPR|OCSP response signed by FPR"
+msgstr ""
+
+msgid "|N|do not return more than N items in one query"
+msgstr ""
+
+#, fuzzy
+#| msgid ""
+#| "@\n"
+#| "(See the man page for a complete listing of all commands and options)\n"
+msgid ""
+"@\n"
+"(See the \"info\" manual for a complete listing of all commands and "
+"options)\n"
+msgstr ""
+"@\n"
+"(コマンドとオプション全部の一覧は、\n"
+"マニュアル・ページをご覧ください)\n"
+
+#, fuzzy
+msgid "Usage: dirmngr [options] (-h for help)"
+msgstr "使い方: gpg [オプション] [ファイル] (ヘルプは -h)"
+
+msgid ""
+"Syntax: dirmngr [options] [command [args]]\n"
+"LDAP and OCSP access for GnuPG\n"
+msgstr ""
+
+#, c-format
+msgid "valid debug levels are: %s\n"
+msgstr ""
+
+#, fuzzy
+#| msgid "usage: gpg [options] "
+msgid "usage: dirmngr [options] "
+msgstr "使い方: gpg [オプション] "
+
+#, fuzzy
+#| msgid "%s not allowed with %s!\n"
+msgid "colons are not allowed in the socket name\n"
+msgstr "%sは%sとともに使うことはできません!\n"
+
+#, fuzzy, c-format
+#| msgid "renaming '%s' to '%s' failed: %s\n"
+msgid "fetching CRL from '%s' failed: %s\n"
+msgstr "「%s」から「%s」への移動に失敗: %s\n"
+
+#, fuzzy, c-format
+#| msgid "renaming '%s' to '%s' failed: %s\n"
+msgid "processing CRL from '%s' failed: %s\n"
+msgstr "「%s」から「%s」への移動に失敗: %s\n"
+
+#, fuzzy, c-format
+msgid "%s:%u: line too long - skipped\n"
+msgstr "行が長すぎます"
+
+#, fuzzy, c-format
+#| msgid "invalid fingerprint"
+msgid "%s:%u: invalid fingerprint detected\n"
+msgstr "無効な指紋"
+
+#, fuzzy, c-format
+#| msgid "read error in '%s': %s\n"
+msgid "%s:%u: read error: %s\n"
+msgstr "「%s」で読出しエラー: %s\n"
+
+#, c-format
+msgid "%s:%u: garbage at end of line ignored\n"
+msgstr ""
+
+msgid "SIGHUP received - re-reading configuration and flushing caches\n"
+msgstr ""
+
+msgid "SIGUSR2 received - no action defined\n"
+msgstr ""
+
+msgid "SIGTERM received - shutting down ...\n"
+msgstr ""
+
+#, c-format
+msgid "SIGTERM received - still %d active connections\n"
+msgstr ""
+
+#, fuzzy
+#| msgid "not forced"
+msgid "shutdown forced\n"
+msgstr "未処理"
+
+msgid "SIGINT received - immediate shutdown\n"
+msgstr ""
+
+#, c-format
+msgid "signal %d received - no action defined\n"
+msgstr ""
+
+msgid "return all values in a record oriented format"
+msgstr ""
+
+msgid "|NAME|ignore host part and connect through NAME"
+msgstr ""
+
+#, fuzzy
+msgid "|NAME|connect to host NAME"
+msgstr "|名前|「名前」用に暗号化"
+
+msgid "|N|connect to port N"
+msgstr ""
+
+msgid "|NAME|use user NAME for authentication"
+msgstr ""
+
+msgid "|PASS|use password PASS for authentication"
+msgstr ""
+
+msgid "take password from $DIRMNGR_LDAP_PASS"
+msgstr ""
+
+msgid "|STRING|query DN STRING"
+msgstr ""
+
+msgid "|STRING|use STRING as filter expression"
+msgstr ""
+
+msgid "|STRING|return the attribute STRING"
+msgstr ""
+
+#, fuzzy
+#| msgid "Usage: gpg [options] [files] (-h for help)"
+msgid "Usage: dirmngr_ldap [options] [URL] (-h for help)\n"
+msgstr "使い方: gpg [オプション] [ファイル] (ヘルプは -h)"
+
+msgid ""
+"Syntax: dirmngr_ldap [options] [URL]\n"
+"Internal LDAP helper for Dirmngr\n"
+"Interface and options may change without notice\n"
+msgstr ""
+
+#, fuzzy, c-format
+#| msgid "invalid import options\n"
+msgid "invalid port number %d\n"
+msgstr "無効な読込みオプションです\n"
+
+#, c-format
+msgid "scanning result for attribute '%s'\n"
+msgstr ""
+
+#, fuzzy, c-format
+msgid "error writing to stdout: %s\n"
+msgstr "鍵輪「%s」の書込みエラー: %s\n"
+
+#, c-format
+msgid "          available attribute '%s'\n"
+msgstr ""
+
+#, fuzzy, c-format
+msgid "attribute '%s' not found\n"
+msgstr "秘密鍵“%s”が見つかりません: %s\n"
+
+#, c-format
+msgid "found attribute '%s'\n"
+msgstr ""
+
+#, fuzzy, c-format
+#| msgid "reading from '%s'\n"
+msgid "processing url '%s'\n"
+msgstr "「%s」から読み出します\n"
+
+#, fuzzy, c-format
+#| msgid "          w/o user IDs: %lu\n"
+msgid "          user '%s'\n"
+msgstr "  ユーザーIDなし: %lu\n"
+
+#, fuzzy, c-format
+#| msgid "                aka \"%s\""
+msgid "          pass '%s'\n"
+msgstr "                別名“%s”"
+
+#, fuzzy, c-format
+#| msgid "          w/o user IDs: %lu\n"
+msgid "          host '%s'\n"
+msgstr "  ユーザーIDなし: %lu\n"
+
+#, fuzzy, c-format
+#| msgid "          not imported: %lu\n"
+msgid "          port %d\n"
+msgstr "        未読込み: %lu\n"
+
+#, fuzzy, c-format
+#| msgid "                aka \"%s\""
+msgid "            DN '%s'\n"
+msgstr "                別名“%s”"
+
+#, c-format
+msgid "        filter '%s'\n"
+msgstr ""
+
+#, fuzzy, c-format
+#| msgid "                aka \"%s\""
+msgid "          attr '%s'\n"
+msgstr "                別名“%s”"
+
+#, fuzzy, c-format
+msgid "no host name in '%s'\n"
+msgstr "(説明はありません)\n"
+
+#, c-format
+msgid "no attribute given for query '%s'\n"
+msgstr ""
+
+#, fuzzy
+#| msgid "WARNING: using insecure memory!\n"
+msgid "WARNING: using first attribute only\n"
+msgstr "警告: 剣呑なメモリーを使用しています!\n"
+
+#, fuzzy, c-format
+#| msgid "renaming '%s' to '%s' failed: %s\n"
+msgid "LDAP init to '%s:%d' failed: %s\n"
+msgstr "「%s」から「%s」への移動に失敗: %s\n"
+
+#, fuzzy, c-format
+#| msgid "renaming '%s' to '%s' failed: %s\n"
+msgid "binding to '%s:%d' failed: %s\n"
+msgstr "「%s」から「%s」への移動に失敗: %s\n"
+
+#, fuzzy, c-format
+#| msgid "dearmoring failed: %s\n"
+msgid "searching '%s' failed: %s\n"
+msgstr "包装除去に失敗しました: %s\n"
+
+#, fuzzy, c-format
+#| msgid "'%s' is not a JPEG file\n"
+msgid "'%s' is not an LDAP URL\n"
+msgstr "「%s」は、JPEGファイルではありません\n"
+
+#, fuzzy, c-format
+#| msgid "'%s' is not a valid long keyID\n"
+msgid "'%s' is an invalid LDAP URL\n"
+msgstr "「%s」は、有効な大型鍵IDでありません\n"
+
+#, fuzzy, c-format
+msgid "error allocating memory: %s\n"
+msgstr "鍵輪「%s」の作成エラー: %s\n"
+
+#, fuzzy, c-format
+msgid "error printing log line: %s\n"
+msgstr "鍵輪「%s」の書込みエラー: %s\n"
+
+#, fuzzy, c-format
+msgid "error reading log from ldap wrapper %d: %s\n"
+msgstr "「%s」の読出しエラー: %s\n"
+
+#, fuzzy, c-format
+msgid "npth_select failed: %s - waiting 1s\n"
+msgstr "秘密の更新に失敗しました: %s\n"
+
+#, c-format
+msgid "ldap wrapper %d ready"
+msgstr ""
+
+#, c-format
+msgid "ldap wrapper %d ready: timeout\n"
+msgstr ""
+
+#, c-format
+msgid "ldap wrapper %d ready: exitcode=%d\n"
+msgstr ""
+
+#, fuzzy, c-format
+msgid "waiting for ldap wrapper %d failed: %s\n"
+msgstr "更新に失敗しました: %s\n"
+
+#, c-format
+msgid "ldap wrapper %d stalled - killing\n"
+msgstr ""
+
+#, c-format
+msgid "error spawning ldap wrapper reaper thread: %s\n"
+msgstr ""
+
+#, fuzzy, c-format
+msgid "reading from ldap wrapper %d failed: %s\n"
+msgstr "鍵の読出しに失敗しました: %s\n"
+
+#, c-format
+msgid "invalid char 0x%02x in host name - not added\n"
+msgstr ""
+
+#, fuzzy, c-format
+#| msgid "sending key %s to %s server %s\n"
+msgid "adding '%s:%d' to the ldap server list\n"
+msgstr "鍵%sを%sサーバー%sへ送信\n"
+
+#, fuzzy, c-format
+msgid "malloc failed: %s\n"
+msgstr "鍵ブロックの削除に失敗しました: %s\n"
+
+#, c-format
+msgid "start_cert_fetch: invalid pattern '%s'\n"
+msgstr ""
+
+msgid "ldap_search hit the size limit of the server\n"
+msgstr ""
+
+#, fuzzy
+#| msgid "%s: invalid file version %d\n"
+msgid "invalid canonical S-expression found\n"
+msgstr "%s: 無効なファイル・バージョン%d\n"
+
+#, fuzzy, c-format
+msgid "gcry_md_open failed: %s\n"
+msgstr "署名に失敗しました: %s\n"
+
+#, fuzzy, c-format
+#| msgid "update secret failed: %s\n"
+msgid "oops: ksba_cert_hash failed: %s\n"
+msgstr "秘密の更新に失敗しました: %s\n"
+
+msgid "bad URL encoding detected\n"
+msgstr ""
+
+#, fuzzy, c-format
+msgid "error reading from responder: %s\n"
+msgstr "「%s」の読出しエラー: %s\n"
+
+#, fuzzy, c-format
+msgid "response from server too large; limit is %d bytes\n"
+msgstr "エラー: URLが長すぎます (上限%d文字)。\n"
+
+msgid "OCSP request not possible due to disabled HTTP\n"
+msgstr ""
+
+#, fuzzy, c-format
+msgid "error setting OCSP target: %s\n"
+msgstr "「%s」の読出しエラー: %s\n"
+
+#, fuzzy, c-format
+msgid "error building OCSP request: %s\n"
+msgstr "「%s」の読出しエラー: %s\n"
+
+#, fuzzy, c-format
+msgid "error connecting to '%s': %s\n"
+msgstr "鍵輪「%s」の書込みエラー: %s\n"
+
+#, fuzzy, c-format
+#| msgid "error reading '%s': %s\n"
+msgid "error reading HTTP response for '%s': %s\n"
+msgstr "「%s」の読出しエラー: %s\n"
+
+#, fuzzy, c-format
+msgid "error accessing '%s': http status %u\n"
+msgstr "「%s」の読出しエラー: %s\n"
+
+#, fuzzy, c-format
+msgid "error parsing OCSP response for '%s': %s\n"
+msgstr "「%s」で信用レコードの検索エラー: %s\n"
+
+#, c-format
+msgid "OCSP responder at '%s' status: %s\n"
+msgstr ""
+
+#, fuzzy, c-format
+#| msgid "renaming '%s' to '%s' failed: %s\n"
+msgid "hashing the OCSP response for '%s' failed: %s\n"
+msgstr "「%s」から「%s」への移動に失敗: %s\n"
+
+msgid "not signed by a default OCSP signer's certificate"
+msgstr ""
+
+msgid "only SHA-1 is supported for OCSP responses\n"
+msgstr ""
+
+#, fuzzy, c-format
+msgid "allocating list item failed: %s\n"
+msgstr "鍵の読出しに失敗しました: %s\n"
+
+#, fuzzy, c-format
+#| msgid "error getting new PIN: %s\n"
+msgid "error getting responder ID: %s\n"
+msgstr "新しいPINの取得エラー: %s\n"
+
+msgid "no suitable certificate found to verify the OCSP response\n"
+msgstr ""
+
+#, fuzzy, c-format
+msgid "issuer certificate not found: %s\n"
+msgstr "秘密鍵“%s”が見つかりません: %s\n"
+
+msgid "caller did not return the target certificate\n"
+msgstr ""
+
+#, fuzzy
+msgid "caller did not return the issuing certificate\n"
+msgstr "失効証明書を生成"
+
+#, fuzzy, c-format
+msgid "failed to allocate OCSP context: %s\n"
+msgstr "鍵の保管に失敗しました: %s\n"
+
+#, fuzzy, c-format
+#| msgid "can't access '%s': %s\n"
+msgid "can't get authorityInfoAccess: %s\n"
+msgstr "「%s」にアクセスできません: %s\n"
+
+msgid "no default OCSP responder defined\n"
+msgstr ""
+
+#, fuzzy
+#| msgid "no default secret keyring: %s\n"
+msgid "no default OCSP signer defined\n"
+msgstr "既定の秘密鍵輪がありません: %s\n"
+
+#, c-format
+msgid "using default OCSP responder '%s'\n"
+msgstr ""
+
+#, fuzzy, c-format
+#| msgid "using cipher %s\n"
+msgid "using OCSP responder '%s'\n"
+msgstr "%s暗号法を使います\n"
+
+#, c-format
+msgid "failed to establish a hashing context for OCSP: %s\n"
+msgstr ""
+
+#, fuzzy, c-format
+msgid "error getting OCSP status for target certificate: %s\n"
+msgstr "通番の取得エラー: %s\n"
+
+#, c-format
+msgid "certificate status is: %s  (this=%s  next=%s)\n"
+msgstr ""
+
+msgid "good"
+msgstr ""
+
+#, fuzzy, c-format
+msgid "certificate has been revoked at: %s due to: %s\n"
+msgstr "注意: 鍵は失効済みです"
+
+msgid "OCSP responder returned a status in the future\n"
+msgstr ""
+
+msgid "OCSP responder returned a non-current status\n"
+msgstr ""
+
+msgid "OCSP responder returned an too old status\n"
+msgstr ""
+
+#, fuzzy, c-format
+msgid "assuan_inquire(%s) failed: %s\n"
+msgstr "署名に失敗しました: %s\n"
+
+msgid "ldapserver missing"
+msgstr ""
+
+msgid "serialno missing in cert ID"
+msgstr ""
+
+#, fuzzy, c-format
+msgid "assuan_inquire failed: %s\n"
+msgstr "署名に失敗しました: %s\n"
+
+#, fuzzy, c-format
+msgid "fetch_cert_by_url failed: %s\n"
+msgstr "鍵ブロックの削除に失敗しました: %s\n"
+
+#, fuzzy, c-format
+msgid "error sending data: %s\n"
+msgstr "「%s」の読出しエラー: %s\n"
+
+#, fuzzy, c-format
+msgid "start_cert_fetch failed: %s\n"
+msgstr "鍵ブロックの削除に失敗しました: %s\n"
+
+#, fuzzy, c-format
+msgid "fetch_next_cert failed: %s\n"
+msgstr "鍵ブロックの削除に失敗しました: %s\n"
+
+#, c-format
+msgid "max_replies %d exceeded\n"
+msgstr ""
+
+#, fuzzy, c-format
+msgid "can't allocate control structure: %s\n"
+msgstr "バックアップ・ファイル「%s」が作成できません: %s\n"
+
+#, fuzzy, c-format
+#| msgid "failed to initialize the TrustDB: %s\n"
+msgid "failed to initialize the server: %s\n"
+msgstr "信用データベースの初期化に失敗しました: %s\n"
+
+#, fuzzy, c-format
+#| msgid "failed to store the creation date: %s\n"
+msgid "failed to the register commands with Assuan: %s\n"
+msgstr "生成日の保管に失敗しました: %s\n"
+
+#, c-format
+msgid "Assuan accept problem: %s\n"
+msgstr ""
+
+#, fuzzy, c-format
+#| msgid "signing failed: %s\n"
+msgid "Assuan processing failed: %s\n"
+msgstr "署名に失敗しました: %s\n"
+
+msgid "accepting root CA not marked as a CA"
+msgstr ""
+
+#, fuzzy
+#| msgid "checking the trustdb\n"
+msgid "CRL checking too deeply nested\n"
+msgstr "信用データベースの検査\n"
+
+msgid "not checking CRL for"
+msgstr ""
+
+#, fuzzy
+msgid "checking CRL for"
+msgstr "作成された署名の検査に失敗しました: %s\n"
+
+msgid "running in compatibility mode - certificate chain not checked!\n"
+msgstr ""
+
+#, fuzzy
+msgid "selfsigned certificate has a BAD signature"
+msgstr "署名を検証"
+
+#, fuzzy, c-format
+msgid "checking trustworthiness of root certificate failed: %s\n"
+msgstr "作成された署名の検査に失敗しました: %s\n"
+
+#, fuzzy
+msgid "certificate chain is good\n"
+msgstr "選好「%s」の重複\n"
+
+msgid "DSA requires the use of a 160 bit hash algorithm\n"
+msgstr "DSAでは160ビットのハッシュ・アルゴリズムの使用が必要です\n"
+
+msgid "certificate should not have been used for CRL signing\n"
+msgstr ""
+
 #, fuzzy
 msgid "quiet"
 msgstr "quit"
@@ -6253,6 +7565,9 @@ msgid "decode received data lines"
 msgstr ""
 
 msgid "|NAME|connect to Assuan socket NAME"
+msgstr ""
+
+msgid "|ADDR|connect to Assuan server at ADDR"
 msgstr ""
 
 msgid "run the Assuan server given on the command line"
@@ -6305,10 +7620,6 @@ msgid "sending line failed: %s\n"
 msgstr "署名に失敗しました: %s\n"
 
 #, fuzzy, c-format
-msgid "error sending %s command: %s\n"
-msgstr "「%s」の読出しエラー: %s\n"
-
-#, fuzzy, c-format
 msgid "error sending standard options: %s\n"
 msgstr "「%s」で信用レコードの検索エラー: %s\n"
 
@@ -6319,9 +7630,6 @@ msgid "Options controlling the configuration"
 msgstr ""
 
 msgid "Options useful for debugging"
-msgstr ""
-
-msgid "|FILE|write server mode logs to FILE"
 msgstr ""
 
 msgid "Options controlling the security"
@@ -6412,6 +7720,25 @@ msgstr ""
 msgid "Configuration for OCSP"
 msgstr ""
 
+msgid "GPG for OpenPGP"
+msgstr ""
+
+msgid "GPG Agent"
+msgstr ""
+
+msgid "Smartcard Daemon"
+msgstr ""
+
+msgid "GPG for S/MIME"
+msgstr ""
+
+msgid "Directory Manager"
+msgstr ""
+
+#, fuzzy
+msgid "PIN and Passphrase Entry"
+msgstr "パスフレーズが不正です"
+
 #, c-format
 msgid "External verification of component %s failed"
 msgstr ""
@@ -6447,6 +7774,12 @@ msgstr "未知の構成項目「%s」\n"
 #, fuzzy
 msgid "check global configuration file"
 msgstr "未知の構成項目「%s」\n"
+
+msgid "reload all or a given component"
+msgstr ""
+
+msgid "kill a given component"
+msgstr ""
 
 msgid "use as output file"
 msgstr "出力ファイルとして使用"
@@ -6623,6 +7956,209 @@ msgid ""
 "Check a passphrase given on stdin against the patternfile\n"
 msgstr ""
 
+#, fuzzy
+#~ msgid "can't fdopen pipe for reading: %s\n"
+#~ msgstr "署名されたデータ「%s」が開けません\n"
+
+#~ msgid "Please select where to store the key:\n"
+#~ msgstr "鍵の保管場所を選択してください:\n"
+
+#~ msgid "unknown key protection algorithm\n"
+#~ msgstr "未知の鍵保護アルゴリズムです\n"
+
+#~ msgid "secret parts of key are not available\n"
+#~ msgstr "鍵の秘密部分が無効です\n"
+
+#~ msgid "secret key already stored on a card\n"
+#~ msgstr "秘密鍵はもうカードに保管してあります\n"
+
+#, fuzzy
+#~ msgid "error writing key to card: %s\n"
+#~ msgstr "鍵輪「%s」の書込みエラー: %s\n"
+
+#~ msgid "Command> "
+#~ msgstr "コマンド> "
+
+#, fuzzy
+#~ msgid "remove the passphrase from exported subkeys"
+#~ msgstr "副鍵の失効"
+
+#~ msgid "key %s: not protected - skipped\n"
+#~ msgstr "鍵%s: 保護されていません - とばします\n"
+
+#, fuzzy
+#~ msgid "failed to unprotect the subkey: %s\n"
+#~ msgstr "鍵の保管に失敗しました: %s\n"
+
+#~ msgid "WARNING: secret key %s does not have a simple SK checksum\n"
+#~ msgstr "警告: 秘密鍵%sには、単純なSKチェックサムがありません\n"
+
+#~ msgid "key %s: secret key without public key - skipped\n"
+#~ msgstr "鍵%s: 公開鍵のない秘密鍵です - とばします\n"
+
+#, fuzzy
+#~ msgid "create a public key when importing a secret key"
+#~ msgstr "公開鍵と秘密鍵が照合しません!\n"
+
+#~ msgid "key %s: already in secret keyring\n"
+#~ msgstr "鍵%s: もう秘密鍵輪にあります\n"
+
+#~ msgid "key %s: secret key not found: %s\n"
+#~ msgstr "鍵%s: 秘密鍵が見つかりません: %s\n"
+
+#, fuzzy
+#~ msgid "NOTE: a key's S/N does not match the card's one\n"
+#~ msgstr "公開鍵と秘密鍵が照合しません!\n"
+
+#, fuzzy
+#~ msgid "NOTE: primary key is online and stored on card\n"
+#~ msgstr "秘密鍵はもうカードに保管してあります\n"
+
+#, fuzzy
+#~ msgid "NOTE: secondary key is online and stored on card\n"
+#~ msgstr "秘密鍵はもうカードに保管してあります\n"
+
+#~ msgid "This key is not protected.\n"
+#~ msgstr "この鍵は保護されていません。\n"
+
+#~ msgid "Key is protected.\n"
+#~ msgstr "鍵は保護されています。\n"
+
+#~ msgid "Can't edit this key: %s\n"
+#~ msgstr "この鍵は編集できません: %s\n"
+
+#~ msgid ""
+#~ "Enter the new passphrase for this secret key.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "この秘密鍵の新しいパスフレーズを入力してください。\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "You don't want a passphrase - this is probably a *bad* idea!\n"
+#~ "\n"
+#~ msgstr ""
+#~ "パスフレーズが不必要なようですが、\n"
+#~ "おそらくそれは＊ろくでもない＊考えです!\n"
+#~ "\n"
+
+#~ msgid "Do you really want to do this? (y/N) "
+#~ msgstr "本当に実行しますか? (y/N) "
+
+#~ msgid "error reading secret keyblock \"%s\": %s\n"
+#~ msgstr "秘密鍵ブロック“%s”の読出しエラー: %s\n"
+
+#~ msgid "Please remove selections from the secret keys.\n"
+#~ msgstr "秘密鍵の選択をといてください。\n"
+
+#~ msgid "No corresponding signature in secret ring\n"
+#~ msgstr "秘密鍵輪に対応する署名がありません\n"
+
+#~ msgid "writing secret key stub to '%s'\n"
+#~ msgstr "「%s」へ秘密鍵スタブを書き込みます\n"
+
+#~ msgid "writing secret key to '%s'\n"
+#~ msgstr "「%s」へ秘密鍵を書き込みます\n"
+
+#~ msgid "no writable secret keyring found: %s\n"
+#~ msgstr "書込み可能な秘密鍵輪が見つかりません: %s\n"
+
+#~ msgid "WARNING: 2 files with confidential information exists.\n"
+#~ msgstr "警告: 信用情報をもった2つのファイルが存在します。\n"
+
+#~ msgid "%s is the unchanged one\n"
+#~ msgstr "%sは変更のない方です\n"
+
+#~ msgid "%s is the new one\n"
+#~ msgstr "%sは新しい方です\n"
+
+#~ msgid "Please fix this possible security flaw\n"
+#~ msgstr "この潜在的な安全上の欠陥を修正してください\n"
+
+#, fuzzy
+#~ msgid "searching for names from %s server %s\n"
+#~ msgstr "“%s”を%sサーバー%sから検索\n"
+
+#, fuzzy
+#~ msgid "searching for names from %s\n"
+#~ msgstr "“%s”をサーバー%sから検索\n"
+
+#~ msgid "searching for \"%s\" from %s server %s\n"
+#~ msgstr "“%s”を%sサーバー%sから検索\n"
+
+#~ msgid "searching for \"%s\" from %s\n"
+#~ msgstr "“%s”をサーバー%sから検索\n"
+
+#~ msgid "no keyserver action!\n"
+#~ msgstr "鍵サーバー・アクションがありません!\n"
+
+#~ msgid "WARNING: keyserver handler from a different version of GnuPG (%s)\n"
+#~ msgstr "警告: 別版 (%s) のGnuPGの鍵サーバー・ハンドラ\n"
+
+#~ msgid "keyserver did not send VERSION\n"
+#~ msgstr "鍵サーバーはVERSIONを送信しませんでした\n"
+
+#~ msgid "external keyserver calls are not supported in this build\n"
+#~ msgstr "この構築では、外部鍵サーバーの呼出しはサポートしていません\n"
+
+#~ msgid "no handler for keyserver scheme '%s'\n"
+#~ msgstr "鍵サーバー・スキーム「%s」用のハンドラがありません\n"
+
+#~ msgid "action '%s' not supported with keyserver scheme '%s'\n"
+#~ msgstr "操作「%s」は、鍵サーバー・スキーム「%s」でサポートされていません\n"
+
+#, fuzzy
+#~ msgid "%s does not support handler version %d\n"
+#~ msgstr "gpgkeys_%sは、ハンドラ%d版をサポートしません\n"
+
+#~ msgid "keyserver timed out\n"
+#~ msgstr "鍵サーバーのタイムアウト\n"
+
+#~ msgid "keyserver internal error\n"
+#~ msgstr "鍵サーバーの内部エラー\n"
+
+#~ msgid "keyserver communications error: %s\n"
+#~ msgstr "鍵サーバー通信エラー: %s\n"
+
+#, fuzzy
+#~ msgid "WARNING: unable to parse URI %s\n"
+#~ msgstr "警告: 鍵%sを%s経由で回復できません: %s\n"
+
+#~ msgid "the IDEA cipher plugin is not present\n"
+#~ msgstr "IDEA暗号法のプラグインがありません\n"
+
+#~ msgid "no corresponding public key: %s\n"
+#~ msgstr "対応する公開鍵がありません: %s\n"
+
+#~ msgid "public key does not match secret key!\n"
+#~ msgstr "公開鍵と秘密鍵が照合しません!\n"
+
+#~ msgid "unknown protection algorithm\n"
+#~ msgstr "未知の保護アルゴリズムです\n"
+
+#~ msgid "NOTE: This key is not protected!\n"
+#~ msgstr "注意: この鍵は保護されていません!\n"
+
+#~ msgid "protection digest %d is not supported\n"
+#~ msgstr "保護要約%dはサポートしていません\n"
+
+#~ msgid "Invalid passphrase; please try again"
+#~ msgstr "無効なパスフレーズです。再入力してください"
+
+#~ msgid "%s ...\n"
+#~ msgstr "%s ...\n"
+
+#~ msgid "WARNING: Weak key detected - please change passphrase again.\n"
+#~ msgstr "警告: 弱い鍵を検出しました。パスフレーズを変更してください。\n"
+
+#~ msgid ""
+#~ "generating the deprecated 16-bit checksum for secret key protection\n"
+#~ msgstr "問題視された16ビットのチェックサムを秘密鍵の保護に生成\n"
+
+#, fuzzy
+#~ msgid "failed to allocated keyDB handle\n"
+#~ msgstr "鍵の保管に失敗しました: %s\n"
+
 #~ msgid "the trustdb is corrupted; please run \"gpg --fix-trustdb\".\n"
 #~ msgstr ""
 #~ "信用データベースが壊れています。“gpg --fix-trustdb”を実行してくださ"
@@ -6679,10 +8215,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "add this secret keyring to the list"
 #~ msgstr "この実行には秘密鍵がいります。\n"
-
-#, fuzzy
-#~ msgid "|NAME|set terminal charset to NAME"
-#~ msgstr "|名前|「名前」用に暗号化"
 
 #, fuzzy
 #~ msgid "|N|use compress algorithm N"
@@ -7014,11 +8546,8 @@ msgstr ""
 #~ msgid "please use the script \"%s\" to generate a new key\n"
 #~ msgstr "生成する鍵の型を選択してください:\n"
 
-#~ msgid "cipher extension `%s' not loaded due to unsafe permissions\n"
+#~ msgid "cipher extension '%s' not loaded due to unsafe permissions\n"
 #~ msgstr "安全でない許可のため、暗号法拡張「%s」をロードしません\n"
-
-#~ msgid "DSA requires the use of a 160 bit hash algorithm\n"
-#~ msgstr "DSAでは160ビットのハッシュ・アルゴリズムの使用が必要です\n"
 
 #, fuzzy
 #~ msgid ".\n"
@@ -7049,31 +8578,25 @@ msgstr ""
 #~ msgstr "エントロピー収集モジュールが、検出されていません\n"
 
 #, fuzzy
-#~ msgid "can't lock `%s': %s\n"
+#~ msgid "can't lock '%s': %s\n"
 #~ msgstr "「%s」がロックできません\n"
 
-#~ msgid "can't stat `%s': %s\n"
-#~ msgstr "「%s」を調べることができません: %s\n"
-
-#~ msgid "`%s' is not a regular file - ignored\n"
+#~ msgid "'%s' is not a regular file - ignored\n"
 #~ msgstr "「%s」は普通のファイルではありません - 無視\n"
 
 #~ msgid "note: random_seed file is empty\n"
 #~ msgstr "注意: random_seed ファイルは空です\n"
 
-#~ msgid "WARNING: invalid size of random_seed file - not used\n"
-#~ msgstr "警告: 無効な長さの random_seed ファイル - 使いません\n"
-
-#~ msgid "can't read `%s': %s\n"
+#~ msgid "can't read '%s': %s\n"
 #~ msgstr "「%s」を読めません: %s\n"
 
 #~ msgid "note: random_seed file not updated\n"
 #~ msgstr "注意: random_seed ファイルの更新をしません\n"
 
-#~ msgid "can't write `%s': %s\n"
+#~ msgid "can't write '%s': %s\n"
 #~ msgstr "「%s」に書き込めません: %s\n"
 
-#~ msgid "can't close `%s': %s\n"
+#~ msgid "can't close '%s': %s\n"
 #~ msgstr "「%s」を閉じられません: %s\n"
 
 #~ msgid "WARNING: using insecure random number generator!!\n"
@@ -7129,10 +8652,6 @@ msgstr ""
 
 #~ msgid "Enter Admin PIN: "
 #~ msgstr "Admin PINの入力: "
-
-#, fuzzy
-#~ msgid "NOTE: %s is not available in this version\n"
-#~ msgstr "このセッションでgpg-agentは無効です\n"
 
 #, fuzzy
 #~ msgid "         algorithms on these user IDs:\n"
@@ -7280,9 +8799,6 @@ msgstr ""
 #~ msgid "... this is a bug (%s:%d:%s)\n"
 #~ msgstr "... バグです (%s:%d:%s)\n"
 
-#~ msgid "WARNING: using insecure memory!\n"
-#~ msgstr "警告: 剣呑なメモリーを使用しています!\n"
-
 #~ msgid "operation is not possible without initialized secure memory\n"
 #~ msgstr "初期化済みの安全なメモリーがない場合には操作できません\n"
 
@@ -7301,7 +8817,7 @@ msgstr ""
 #~ msgstr "鍵%s: 予期せぬ署名クラス (0x%02X) - とばします\n"
 
 #, fuzzy
-#~ msgid "Unable to clean `%s'\n"
+#~ msgid "Unable to clean '%s'\n"
 #~ msgstr "「%s」を実行できません: %s\n"
 
 #, fuzzy
@@ -7325,9 +8841,6 @@ msgstr ""
 
 #~ msgid "can't get server write FD for the agent\n"
 #~ msgstr "エージェント用のサーバー書込みFDを取得できません\n"
-
-#~ msgid "invalid response from agent\n"
-#~ msgstr "エージェントからの無効な応答\n"
 
 #~ msgid "select secondary key N"
 #~ msgstr "副鍵Nの選択"
@@ -7521,7 +9034,7 @@ msgstr ""
 #~ msgid "showphoto"
 #~ msgstr "showphoto"
 
-#~ msgid "digest algorithm `%s' is read-only in this release\n"
+#~ msgid "digest algorithm '%s' is read-only in this release\n"
 #~ msgstr "要約アルゴリズム「%s」は、この版だと読出しだけです\n"
 
 #~ msgid "[%8.8s] "
