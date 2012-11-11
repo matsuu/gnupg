@@ -17,9 +17,9 @@ msgstr ""
 "Content-Type: text/plain; charset=EUC-JP\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#, fuzzy, c-format
+#, c-format
 msgid "failed to acquire the pinentry lock: %s\n"
-msgstr "指紋の保管に失敗しました: %s\n"
+msgstr "pinentryのロック取得に失敗しました: %s\n"
 
 #. TRANSLATORS: These are labels for buttons etc used in
 #. Pinentries.  An underscore indicates that the next letter
@@ -27,19 +27,18 @@ msgstr "指紋の保管に失敗しました: %s\n"
 #. a literal one.  The actual to be translated text starts after
 #. the second vertical bar.
 msgid "|pinentry-label|_OK"
-msgstr ""
+msgstr "_OK"
 
 msgid "|pinentry-label|_Cancel"
-msgstr ""
+msgstr "キャンセル(_C)"
 
 msgid "|pinentry-label|PIN:"
-msgstr ""
+msgstr "PIN:"
 
 #. TRANSLATORS: This string is displayed by Pinentry as the label
 #. for the quality bar.
-#, fuzzy
 msgid "Quality:"
-msgstr "有効性: %s"
+msgstr "強度:"
 
 #. TRANSLATORS: This string is a tooltip, shown by pinentry when
 #. hovering over the quality bar.  Please use an appropriate
@@ -53,51 +52,45 @@ msgstr ""
 msgid ""
 "Please enter your PIN, so that the secret key can be unlocked for this "
 "session"
-msgstr ""
+msgstr "このセッションで秘密鍵を一時解除するため、PINを入力してください"
 
-#, fuzzy
 msgid ""
 "Please enter your passphrase, so that the secret key can be unlocked for "
 "this session"
-msgstr "パスフレーズを入力してください。これは秘密の文章のことです \n"
+msgstr ""
+"このセッションで秘密鍵を一時解除するため、パスフレーズを入力してください"
 
 #. TRANSLATORS: The string is appended to an error message in
 #. the pinentry.  The %s is the actual error message, the
 #. two %d give the current and maximum number of tries.
 #, c-format
 msgid "SETERROR %s (try %d of %d)"
-msgstr ""
+msgstr "SETERROR %s (%d回目/最大%d回)"
 
-#, fuzzy
 msgid "PIN too long"
-msgstr "行が長すぎます"
+msgstr "PINが長すぎます"
 
-#, fuzzy
 msgid "Passphrase too long"
-msgstr "パスフレーズが長すぎます\n"
+msgstr "パスフレーズが長すぎます"
 
-#, fuzzy
 msgid "Invalid characters in PIN"
-msgstr "名前に無効な文字があります\n"
+msgstr "PINに無効な文字があります"
 
 msgid "PIN too short"
-msgstr ""
+msgstr "PINが短すぎます"
 
-#, fuzzy
 msgid "Bad PIN"
-msgstr "不正なMPIです"
+msgstr "不正なPINです"
 
-#, fuzzy
 msgid "Bad Passphrase"
 msgstr "パスフレーズが不正です"
 
-#, fuzzy
 msgid "Passphrase"
-msgstr "パスフレーズが不正です"
+msgstr "パスフレーズ"
 
-#, fuzzy, c-format
+#, c-format
 msgid "ssh keys greater than %d bits are not supported\n"
-msgstr "保護要約%dはサポートしていません\n"
+msgstr "%dビット以上のSSH鍵はサポートされていません\n"
 
 #, c-format
 msgid "can't create '%s': %s\n"
@@ -107,29 +100,29 @@ msgstr "「%s」が作成できません: %s\n"
 msgid "can't open '%s': %s\n"
 msgstr "「%s」が開けません: %s\n"
 
-#, fuzzy, c-format
+#, c-format
 msgid "error getting serial number of card: %s\n"
-msgstr "通番の取得エラー: %s\n"
+msgstr "カードのシリアル番号の取得エラー: %s\n"
 
 #, c-format
 msgid "detected card with S/N: %s\n"
-msgstr ""
+msgstr "カードのシリアル番号が見つかりました: %s\n"
 
 #, fuzzy, c-format
 msgid "no authentication key for ssh on card: %s\n"
-msgstr "現行鍵情報の取得エラー: %s\n"
+msgstr "カードのデフォルトの認証用鍵IDの取得エラー: %s\n"
 
 #, fuzzy, c-format
 msgid "no suitable card key found: %s\n"
-msgstr "書込み可能な秘密鍵輪が見つかりません: %s\n"
+msgstr "有効なカード鍵が見つかりません: %s\n"
 
-#, fuzzy, c-format
+#, c-format
 msgid "shadowing the key failed: %s\n"
 msgstr "鍵の読出しに失敗しました: %s\n"
 
-#, fuzzy, c-format
+#, c-format
 msgid "error writing key: %s\n"
-msgstr "鍵輪「%s」の書込みエラー: %s\n"
+msgstr "鍵の書込みエラー: %s\n"
 
 #, c-format
 msgid ""
@@ -144,96 +137,87 @@ msgid "Deny"
 msgstr ""
 
 #, fuzzy, c-format
+#| msgid "Please enter the passphrase for the ssh key%0A  %c"
 msgid "Please enter the passphrase for the ssh key%%0A  %F%%0A  (%c)"
-msgstr "パスフレーズを入力してください。これは秘密の文章のことです \n"
+msgstr "SSH鍵%0A  %cのパスフレーズを入力してください"
 
-#, fuzzy
 msgid "Please re-enter this passphrase"
-msgstr "パスフレーズの変更"
+msgstr "パスフレーズを再入力してください"
 
 #, fuzzy, c-format
+#| msgid ""
+#| "Please enter a passphrase to protect the received secret key%%0A   %s"
+#| "%%0Awithin gpg-agent's key storage"
 msgid ""
 "Please enter a passphrase to protect the received secret key%%0A   %s%%0A   "
 "%s%%0Awithin gpg-agent's key storage"
-msgstr "パスフレーズを入力してください。これは秘密の文章のことです \n"
+msgstr ""
+"受信した秘密鍵%%0A   %s%%0Aを保護してgpg-agentのキーストレージにに格納するた"
+"めにパスフレーズを入力してください"
 
 msgid "does not match - try again"
-msgstr ""
+msgstr "一致しません。再入力してください"
 
-#, fuzzy, c-format
+#, c-format
 msgid "failed to create stream from socket: %s\n"
-msgstr "%s: ハッシュ表の作成に失敗しました: %s\n"
+msgstr "ソケットの入力ストリームの作成に失敗しました: %s\n"
 
-#, fuzzy
 msgid "Please insert the card with serial number"
-msgstr ""
-"今のカードを抜き、次の通番のそれを入れてください:\n"
-"   %.*s\n"
+msgstr "シリアル番号つきのカードを挿入してください"
 
-#, fuzzy
 msgid "Please remove the current card and insert the one with serial number"
-msgstr ""
-"今のカードを抜き、次の通番のそれを入れてください:\n"
-"   %.*s\n"
+msgstr "今のカードを抜き、シリアル番号つきのカードを挿入してください"
 
-#, fuzzy
 msgid "Admin PIN"
-msgstr "|A|Admin PIN"
+msgstr "管理用PIN"
 
 #. TRANSLATORS: A PUK is the Personal Unblocking Code
 #. used to unblock a PIN.
 msgid "PUK"
-msgstr ""
+msgstr "PUK"
 
 msgid "Reset Code"
-msgstr ""
+msgstr "リセットコード"
 
 #, c-format
 msgid "%s%%0A%%0AUse the reader's keypad for input."
-msgstr ""
+msgstr "%s%%0A%%0Aリーダーのキーパッドを用いて入力してください。"
 
-#, fuzzy
 msgid "Repeat this Reset Code"
-msgstr "PINを再入力: "
+msgstr "リセットコードを再入力してください"
 
-#, fuzzy
 msgid "Repeat this PUK"
-msgstr "PINを再入力: "
+msgstr "PUKを再入力してください"
 
-#, fuzzy
 msgid "Repeat this PIN"
-msgstr "PINを再入力: "
+msgstr "PINを再入力してください"
 
-#, fuzzy
 msgid "Reset Code not correctly repeated; try again"
-msgstr "PINをちゃんと繰り返していません。再入力してください"
+msgstr "リセットコードが一致しません。再入力してください"
 
-#, fuzzy
 msgid "PUK not correctly repeated; try again"
-msgstr "PINをちゃんと繰り返していません。再入力してください"
+msgstr "PUKが一致しません。再入力してください"
 
 msgid "PIN not correctly repeated; try again"
-msgstr "PINをちゃんと繰り返していません。再入力してください"
+msgstr "PINが一致しません。再入力してください"
 
-#, fuzzy, c-format
+#, c-format
 msgid "Please enter the PIN%s%s%s to unlock the card"
-msgstr "PIN [署名済: %lu]"
+msgstr "カードを解除するためPIN%s%s%sを入力してください。"
 
-#, fuzzy, c-format
+#, c-format
 msgid "error creating temporary file: %s\n"
-msgstr "パスフレーズの作成エラー: %s\n"
+msgstr "一時ファイルの作成エラー: %s\n"
 
-#, fuzzy, c-format
+#, c-format
 msgid "error writing to temporary file: %s\n"
-msgstr "%s: ディレクトリー・レコードの書込みエラー: %s\n"
+msgstr "一時ファイルへの書込みエラー: %s\n"
 
-#, fuzzy
 msgid "Enter new passphrase"
-msgstr "パスフレーズを入力\n"
+msgstr "新しいパスフレーズを入力してください"
 
-#, fuzzy
 msgid "Take this one anyway"
-msgstr "それでもこの鍵を使いますか? (y/N) "
+msgstr ""
 
 #, c-format
 msgid ""
@@ -243,7 +227,11 @@ msgid_plural ""
 "Warning: You have entered an insecure passphrase.%%0AA passphrase should be "
 "at least %u characters long."
 msgstr[0] ""
+"警告: パスフレーズが安全ではありません。%%0AAパスフレーズは少なくとも%u文字以"
+"上にすべきです。"
 msgstr[1] ""
+"警告: パスフレーズが安全ではありません。%%0AAパスフレーズは少なくとも%u文字以"
+"上にすべきです。"
 
 #, c-format
 msgid ""
@@ -253,52 +241,58 @@ msgid_plural ""
 "Warning: You have entered an insecure passphrase.%%0AA passphrase should "
 "contain at least %u digits or%%0Aspecial characters."
 msgstr[0] ""
+"警告: パスフレーズが安全ではありません。%%0AAパスフレーズは少なくとも%u文字以"
+"上の数字または%%0A文字以上の特殊文字を含むべきです。"
 msgstr[1] ""
+"警告: パスフレーズが安全ではありません。%%0AAパスフレーズは少なくとも%u文字以"
+"上の数字または%%0A文字以上の特殊文字を含むべきです。"
 
 #, c-format
 msgid ""
 "Warning: You have entered an insecure passphrase.%%0AA passphrase may not be "
 "a known term or match%%0Acertain pattern."
 msgstr ""
+"警告: パスフレーズが安全ではありません。%%0AAパスフレーズによく知られた単語"
+"や%%0Aのパターンが含まれているかもしれません。"
 
 #, c-format
 msgid ""
 "You have not entered a passphrase!%0AAn empty passphrase is not allowed."
 msgstr ""
+"警告: パスフレーズが入力されていません!%%0AA空のパスフレーズは許可されていま"
+"せん。"
 
 #, c-format
 msgid ""
 "You have not entered a passphrase - this is in general a bad idea!%0APlease "
 "confirm that you do not want to have any protection on your key."
 msgstr ""
+"警告: パスフレーズが入力されていません。これは一般的に良くない方法です!%0A本"
+"当に鍵を保護する必要がないのか確認してください。"
 
 msgid "Yes, protection is not needed"
-msgstr ""
+msgstr "はい、保護は必要ありません。"
 
 #, fuzzy, c-format
+#| msgid "Please enter the passphrase to%0Ato protect your new key"
 msgid "Please enter the passphrase to%0Aprotect your new key"
-msgstr ""
-"秘密鍵を保護するためにパスフレーズがいります。\n"
-"\n"
+msgstr "新しい鍵を保護するために%0Aのパスフレーズを入力してください。"
 
-#, fuzzy
 msgid "Please enter the new passphrase"
-msgstr "パスフレーズの変更"
+msgstr "新しいパスフレーズを入力してください"
 
-#, fuzzy
 msgid ""
 "@Options:\n"
 " "
 msgstr ""
-"@\n"
-"オプション:\n"
+"@オプション:\n"
 " "
 
 msgid "run in server mode (foreground)"
-msgstr ""
+msgstr "サーバーモード(フォアグラウンド)で実行する"
 
 msgid "run in daemon mode (background)"
-msgstr ""
+msgstr "デーモンモード(バックグラウンド)で実行する"
 
 msgid "verbose"
 msgstr "冗長"
@@ -336,9 +330,8 @@ msgstr ""
 msgid "|PGM|use PGM as the SCdaemon program"
 msgstr ""
 
-#, fuzzy
 msgid "do not use the SCdaemon"
-msgstr "信用データベースを更新"
+msgstr "SCdaemonを使わない"
 
 msgid "ignore requests to change the TTY"
 msgstr ""
@@ -371,9 +364,8 @@ msgstr ""
 msgid "Please report bugs to <@EMAIL@>.\n"
 msgstr "バグを見つけたら <@EMAIL@> までご報告ください。\n"
 
-#, fuzzy
 msgid "Usage: gpg-agent [options] (-h for help)"
-msgstr "使い方: gpg [オプション] [ファイル] (ヘルプは -h)"
+msgstr "使い方: gpg-agent [オプション] (ヘルプは -h)"
 
 msgid ""
 "Syntax: gpg-agent [options] [command [args]]\n"
@@ -519,9 +511,8 @@ msgstr ""
 "オプション:\n"
 " "
 
-#, fuzzy
 msgid "Usage: gpg-protect-tool [options] (-h for help)\n"
-msgstr "使い方: gpg [オプション] [ファイル] (ヘルプは -h)"
+msgstr "使い方: gpg-protect-tool [オプション] (ヘルプは -h)"
 
 msgid ""
 "Syntax: gpg-protect-tool [options] [args]\n"
@@ -547,13 +538,11 @@ msgid ""
 "needed to complete this operation."
 msgstr "パスフレーズを入力してください。これは秘密の文章のことです \n"
 
-#, fuzzy
 msgid "Passphrase:"
-msgstr "パスフレーズが不正です"
+msgstr "パスフレーズ:"
 
-#, fuzzy
 msgid "cancelled\n"
-msgstr "キャンセル"
+msgstr "キャンセルされました\n"
 
 #, fuzzy, c-format
 msgid "error while asking for the passphrase: %s\n"
@@ -666,17 +655,14 @@ msgid "secret key parts are not available\n"
 msgstr "秘密部分が得られません\n"
 
 #, fuzzy, c-format
-#| msgid "protection algorithm %d%s is not supported\n"
 msgid "public key algorithm %d (%s) is not supported\n"
 msgstr "保護アルゴリズム%d%sはサポートしていません\n"
 
 #, fuzzy, c-format
-#| msgid "protection algorithm %d%s is not supported\n"
 msgid "protection algorithm %d (%s) is not supported\n"
 msgstr "保護アルゴリズム%d%sはサポートしていません\n"
 
 #, fuzzy, c-format
-#| msgid "protection algorithm %d%s is not supported\n"
 msgid "protection hash algorithm %d (%s) is not supported\n"
 msgstr "保護アルゴリズム%d%sはサポートしていません\n"
 
@@ -920,7 +906,6 @@ msgid "Data decryption succeeded"
 msgstr ""
 
 #, fuzzy
-#| msgid "protection algorithm %d%s is not supported\n"
 msgid "Encryption algorithm supported"
 msgstr "保護アルゴリズム%d%sはサポートしていません\n"
 
@@ -1359,11 +1344,7 @@ msgstr "秘密鍵はもうカードに保管してあります\n"
 msgid "Replace existing keys? (y/N) "
 msgstr "既存の鍵群を交換しますか? (y/N) "
 
-#, fuzzy, c-format
-#| msgid ""
-#| "Please note that the factory settings of the PINs are\n"
-#| "   PIN = '%s'     Admin PIN = '%s'\n"
-#| "You should change them using the command --change-pin\n"
+#, c-format
 msgid ""
 "Please note that the factory settings of the PINs are\n"
 "   PIN = '%s'     Admin PIN = '%s'\n"
@@ -1641,7 +1622,6 @@ msgid "key %s: key material on-card - skipped\n"
 msgstr "鍵%s: 副鍵署名の場所が、誤っています - とばします\n"
 
 #, fuzzy
-#| msgid "%s: skipped: %s\n"
 msgid " - skipped"
 msgstr "%s: スキップ: %s\n"
 
@@ -1914,9 +1894,7 @@ msgstr "警告: 拡張「%s」の安全でない許可\n"
 msgid "WARNING: unsafe enclosing directory ownership on homedir '%s'\n"
 msgstr "警告: homedir 「%s」の安全でない上位ディレクトリー所有者\n"
 
-#, fuzzy, c-format
-#| msgid ""
-#| "WARNING: unsafe enclosing directory ownership on configuration file '%s'\n"
+#, c-format
 msgid ""
 "WARNING: unsafe enclosing directory ownership on configuration file '%s'\n"
 msgstr "警告: 構成ファイル「%s」の安全でない上位ディレクトリー所有者\n"
@@ -1929,7 +1907,7 @@ msgstr "警告: 拡張「%s」の安全でない上位ディレクトリー所有者\n"
 msgid "WARNING: unsafe enclosing directory permissions on homedir '%s'\n"
 msgstr "警告: homedir 「%s」の安全でない上位ディレクトリー許可\n"
 
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "WARNING: unsafe enclosing directory permissions on configuration file '%s'\n"
 msgstr "警告: 構成ファイル「%s」の安全でない上位ディレクトリー許可\n"
@@ -2245,7 +2223,6 @@ msgid "--edit-key user-id [commands]"
 msgstr "--edit-key ユーザーid [コマンド]"
 
 #, fuzzy
-#| msgid "--sign-key user-id"
 msgid "--passwd <user-id>"
 msgstr "--sign-key ユーザーid"
 
@@ -2547,7 +2524,6 @@ msgid "key %s: secret key imported\n"
 msgstr "鍵%s: 秘密鍵を読み込みました\n"
 
 #, fuzzy, c-format
-#| msgid "skipped: secret key already present\n"
 msgid "key %s: secret key already exists\n"
 msgstr "スキップ: 秘密鍵はもうあります\n"
 
@@ -2591,7 +2567,6 @@ msgid "key %s: unsupported public key algorithm\n"
 msgstr "鍵%s: サポートしていない公開鍵アルゴリズムです\n"
 
 #, fuzzy, c-format
-#| msgid "key %s: direct key signature added\n"
 msgid "key %s: invalid direct key signature\n"
 msgstr "鍵%s: 直接鍵署名を追加\n"
 
@@ -2909,7 +2884,6 @@ msgid "Key has only stub or on-card key items - no passphrase to change.\n"
 msgstr ""
 
 #, fuzzy, c-format
-#| msgid "error creating passphrase: %s\n"
 msgid "key %s: error changing passphrase: %s\n"
 msgstr "パスフレーズの作成エラー: %s\n"
 
@@ -4404,7 +4378,6 @@ msgstr ""
 "%uビット%s鍵, ID %s作成日付は%s%s\n"
 
 #, fuzzy, c-format
-#| msgid "%u-bit %s key, ID %s, created %s"
 msgid ""
 "%s\n"
 "\"%.*s\"\n"
@@ -5814,7 +5787,7 @@ msgstr "無効なハッシュ・アルゴリズム「%s」です\n"
 
 #, fuzzy, c-format
 msgid "line %d: invalid issuer name '%s' at pos %d\n"
-msgstr "無効なハッシュ・アルゴリズム「%s」です\n"
+msgstr "エラー: 無効な形式の指紋。\n"
 
 #, fuzzy, c-format
 msgid "line %d: invalid date given\n"
@@ -6302,12 +6275,10 @@ msgid "dropping %u certificates from the cache\n"
 msgstr ""
 
 #, fuzzy, c-format
-#| msgid "can't create directory '%s': %s\n"
 msgid "can't access directory '%s': %s\n"
 msgstr "ディレクトリー「%s」が作成できません: %s\n"
 
 #, fuzzy, c-format
-#| msgid "can't create '%s': %s\n"
 msgid "can't parse certificate '%s': %s\n"
 msgstr "「%s」が作成できません: %s\n"
 
@@ -6378,7 +6349,6 @@ msgid "error getting authorityKeyIdentifier: %s\n"
 msgstr "新しいPINの取得エラー: %s\n"
 
 #, fuzzy, c-format
-#| msgid "can't create directory '%s': %s\n"
 msgid "creating directory '%s'\n"
 msgstr "ディレクトリー「%s」が作成できません: %s\n"
 
@@ -6391,7 +6361,6 @@ msgid "ignoring database dir '%s'\n"
 msgstr "後尾の行にエラーがあります\n"
 
 #, fuzzy, c-format
-#| msgid "error reading '%s': %s\n"
 msgid "error reading directory '%s': %s\n"
 msgstr "「%s」の読出しエラー: %s\n"
 
@@ -6400,7 +6369,6 @@ msgid "removing cache file '%s'\n"
 msgstr "鍵の読出しに失敗しました: %s\n"
 
 #, fuzzy, c-format
-#| msgid "enarmoring failed: %s\n"
 msgid "not removing file '%s'\n"
 msgstr "包装に失敗しました: %s\n"
 
@@ -6413,12 +6381,10 @@ msgid "failed to open cache dir file '%s': %s\n"
 msgstr "「%s」が開けません: %s\n"
 
 #, fuzzy, c-format
-#| msgid "error creating keyring '%s': %s\n"
 msgid "error creating new cache dir file '%s': %s\n"
 msgstr "鍵輪「%s」の作成エラー: %s\n"
 
 #, fuzzy, c-format
-#| msgid "error writing secret keyring '%s': %s\n"
 msgid "error writing new cache dir file '%s': %s\n"
 msgstr "秘密鍵輪「%s」の書込みエラー: %s\n"
 
@@ -6427,7 +6393,6 @@ msgid "error closing new cache dir file '%s': %s\n"
 msgstr "「%s」でエラー: %s\n"
 
 #, fuzzy, c-format
-#| msgid "new configuration file '%s' created\n"
 msgid "new cache dir file '%s' created\n"
 msgstr "新しい構成ファイル「%s」ができました\n"
 
@@ -6492,12 +6457,10 @@ msgid "error closing '%s': %s\n"
 msgstr "「%s」でエラー: %s\n"
 
 #, fuzzy, c-format
-#| msgid "renaming '%s' to '%s' failed: %s\n"
 msgid "error renaming '%s' to '%s': %s\n"
 msgstr "「%s」から「%s」への移動に失敗: %s\n"
 
 #, fuzzy, c-format
-#| msgid "can't access '%s': %s\n"
 msgid "can't hash '%s': %s\n"
 msgstr "「%s」にアクセスできません: %s\n"
 
@@ -6506,7 +6469,6 @@ msgid "error setting up MD5 hash context: %s\n"
 msgstr "「%s」の読出しエラー: %s\n"
 
 #, fuzzy, c-format
-#| msgid "error in '%s': %s\n"
 msgid "error hashing '%s': %s\n"
 msgstr "「%s」でエラー: %s\n"
 
@@ -6518,7 +6480,6 @@ msgid "too many open cache files; can't open anymore\n"
 msgstr ""
 
 #, fuzzy, c-format
-#| msgid "option file '%s': %s\n"
 msgid "opening cache file '%s'\n"
 msgstr "オプション・ファイル「%s」: %s\n"
 
@@ -6538,10 +6499,9 @@ msgstr ""
 
 #, fuzzy, c-format
 msgid "failed to create a new cache object: %s\n"
-msgstr "%s: ハッシュ表の作成に失敗しました: %s\n"
+msgstr "ソケットの入力ストリームの作成に失敗しました: %s\n"
 
 #, fuzzy, c-format
-#| msgid "No help available for '%s'"
 msgid "no CRL available for issuer id %s\n"
 msgstr "「%s」のヘルプはありません"
 
@@ -6587,7 +6547,6 @@ msgid "error getting data from cache file: %s\n"
 msgstr "新しいPINの取得エラー: %s\n"
 
 #, fuzzy, c-format
-#| msgid "invalid hash algorithm '%s'\n"
 msgid "unknown hash algorithm '%s'\n"
 msgstr "無効なハッシュ・アルゴリズム「%s」です\n"
 
@@ -6596,7 +6555,6 @@ msgid "gcry_md_open for algorithm %d failed: %s\n"
 msgstr ""
 
 #, fuzzy
-#| msgid "invalid response from agent\n"
 msgid "got an invalid S-expression from libksba\n"
 msgstr "エージェントからの無効な応答\n"
 
@@ -6609,13 +6567,12 @@ msgid "creating S-expression failed: %s\n"
 msgstr "鍵の読出しに失敗しました: %s\n"
 
 #, fuzzy, c-format
-#| msgid "build_packet failed: %s\n"
 msgid "ksba_crl_parse failed: %s\n"
 msgstr "build_packet に失敗しました: %s\n"
 
 #, fuzzy, c-format
 msgid "error getting update times of CRL: %s\n"
-msgstr "通番の取得エラー: %s\n"
+msgstr "カードのシリアル番号の取得エラー: %s\n"
 
 #, c-format
 msgid "update times of this CRL: this=%s next=%s\n"
@@ -6625,13 +6582,12 @@ msgid "nextUpdate not given; assuming a validity period of one day\n"
 msgstr ""
 
 #, fuzzy, c-format
-#| msgid "error getting new PIN: %s\n"
 msgid "error getting CRL item: %s\n"
 msgstr "新しいPINの取得エラー: %s\n"
 
 #, fuzzy, c-format
 msgid "error inserting item into temporary cache file: %s\n"
-msgstr "%s: ディレクトリー・レコードの書込みエラー: %s\n"
+msgstr "一時ファイルへの書込みエラー: %s\n"
 
 #, fuzzy, c-format
 msgid "no CRL issuer found in CRL: %s\n"
@@ -6641,7 +6597,6 @@ msgid "locating CRL issuer certificate by authorityKeyIdentifier\n"
 msgstr ""
 
 #, fuzzy, c-format
-#| msgid "signature verification suppressed\n"
 msgid "CRL signature verification failed: %s\n"
 msgstr "署名の検証を省略\n"
 
@@ -6667,20 +6622,19 @@ msgstr "ディレクトリー「%s」が作成できません: %s\n"
 
 #, fuzzy, c-format
 msgid "error creating temporary cache file '%s': %s\n"
-msgstr "パスフレーズの作成エラー: %s\n"
+msgstr "一時ファイルの作成エラー: %s\n"
 
 #, fuzzy, c-format
-#| msgid "update secret failed: %s\n"
 msgid "crl_parse_insert failed: %s\n"
 msgstr "秘密の更新に失敗しました: %s\n"
 
 #, fuzzy, c-format
 msgid "error finishing temporary cache file '%s': %s\n"
-msgstr "%s: ディレクトリー・レコードの書込みエラー: %s\n"
+msgstr "一時ファイルへの書込みエラー: %s\n"
 
 #, fuzzy, c-format
 msgid "error closing temporary cache file '%s': %s\n"
-msgstr "パスフレーズの作成エラー: %s\n"
+msgstr "一時ファイルの作成エラー: %s\n"
 
 #, c-format
 msgid "WARNING: new CRL still too old; it expired on %s - loading anyway\n"
@@ -6703,7 +6657,6 @@ msgid "creating cache file '%s'\n"
 msgstr "パスフレーズの作成エラー: %s\n"
 
 #, fuzzy, c-format
-#| msgid "renaming '%s' to '%s' failed: %s\n"
 msgid "problem renaming '%s' to '%s': %s\n"
 msgstr "「%s」から「%s」への移動に失敗: %s\n"
 
@@ -6732,7 +6685,6 @@ msgid " ERROR: This cached CRL may have been tampered with!\n"
 msgstr ""
 
 #, fuzzy
-#| msgid "WARNING: invalid size of random_seed file - not used\n"
 msgid " WARNING: invalid cache record length\n"
 msgstr "警告: 無効な長さの random_seed ファイル - 使いません\n"
 
@@ -6741,7 +6693,6 @@ msgid "problem reading cache record: %s\n"
 msgstr "%s: 空きレコードの読出しエラー: %s\n"
 
 #, fuzzy, c-format
-#| msgid "error reading keyblock: %s\n"
 msgid "problem reading cache key: %s\n"
 msgstr "鍵ブロックの読出しエラー: %s\n"
 
@@ -6775,7 +6726,6 @@ msgid "CRL access not possible due to disabled %s\n"
 msgstr ""
 
 #, fuzzy, c-format
-#| msgid "%s: error writing dir record: %s\n"
 msgid "error initializing reader object: %s\n"
 msgstr "%s: ディレクトリー・レコードの書込みエラー: %s\n"
 
@@ -6784,7 +6734,6 @@ msgid "URL '%s' redirected to '%s' (%u)\n"
 msgstr ""
 
 #, fuzzy
-#| msgid "too many cipher preferences\n"
 msgid "too many redirections\n"
 msgstr "多すぎる暗号法選好\n"
 
@@ -6833,15 +6782,13 @@ msgstr ""
 
 #, fuzzy
 msgid "expect certificates in PEM format"
-msgstr "不正な証明書です"
+msgstr "失効証明書を作成。\n"
 
 #, fuzzy
-#| msgid "Enter the user ID of the designated revoker: "
 msgid "force the use of the default OCSP responder"
 msgstr "指名失効者のユーザーIDを入力してください: "
 
 #, fuzzy
-#| msgid "Usage: gpg [options] [files] (-h for help)"
 msgid "Usage: dirmngr-client [options] [certfile|pattern] (-h for help)\n"
 msgstr "使い方: gpg [オプション] [ファイル] (ヘルプは -h)"
 
@@ -6864,12 +6811,10 @@ msgid "certificate too large to make any sense\n"
 msgstr ""
 
 #, fuzzy, c-format
-#| msgid "update failed: %s\n"
 msgid "lookup failed: %s\n"
 msgstr "更新に失敗しました: %s\n"
 
 #, fuzzy, c-format
-#| msgid "renaming '%s' to '%s' failed: %s\n"
 msgid "loading CRL '%s' failed: %s\n"
 msgstr "「%s」から「%s」への移動に失敗: %s\n"
 
@@ -6893,18 +6838,16 @@ msgid "certificate check failed: %s\n"
 msgstr "鍵ブロックの削除に失敗しました: %s\n"
 
 #, fuzzy, c-format
-#| msgid "can't stat '%s': %s\n"
 msgid "got status: '%s'\n"
 msgstr "「%s」を調べることができません: %s\n"
 
 #, fuzzy, c-format
-#| msgid "error writing secret keyring '%s': %s\n"
 msgid "error writing base64 encoding: %s\n"
 msgstr "秘密鍵輪「%s」の書込みエラー: %s\n"
 
 #, fuzzy, c-format
 msgid "failed to allocate assuan context: %s\n"
-msgstr "%s: ハッシュ表の作成に失敗しました: %s\n"
+msgstr "ソケットの入力ストリームの作成に失敗しました: %s\n"
 
 msgid "apparently no running dirmngr\n"
 msgstr ""
@@ -6924,7 +6867,6 @@ msgid "can't connect to the dirmngr - trying fall back\n"
 msgstr ""
 
 #, fuzzy, c-format
-#| msgid "can't connect to '%s': %s\n"
 msgid "can't connect to the dirmngr: %s\n"
 msgstr "「%s」へ接続できません: %s\n"
 
@@ -6938,7 +6880,6 @@ msgid "absolute file name expected\n"
 msgstr ""
 
 #, fuzzy, c-format
-#| msgid "writing to '%s'\n"
 msgid "looking up '%s'\n"
 msgstr "「%s」への書込み\n"
 
@@ -6965,7 +6906,6 @@ msgid "|FILE|write server mode logs to FILE"
 msgstr ""
 
 #, fuzzy
-#| msgid "Quit without saving? (y/N) "
 msgid "run without asking a user"
 msgstr "保存せずに終了しますか? (y/N) "
 
@@ -7020,9 +6960,6 @@ msgid "|N|do not return more than N items in one query"
 msgstr ""
 
 #, fuzzy
-#| msgid ""
-#| "@\n"
-#| "(See the man page for a complete listing of all commands and options)\n"
 msgid ""
 "@\n"
 "(See the \"info\" manual for a complete listing of all commands and "
@@ -7046,22 +6983,18 @@ msgid "valid debug levels are: %s\n"
 msgstr ""
 
 #, fuzzy
-#| msgid "usage: gpg [options] "
 msgid "usage: dirmngr [options] "
 msgstr "使い方: gpg [オプション] "
 
 #, fuzzy
-#| msgid "%s not allowed with %s!\n"
 msgid "colons are not allowed in the socket name\n"
 msgstr "%sは%sとともに使うことはできません!\n"
 
 #, fuzzy, c-format
-#| msgid "renaming '%s' to '%s' failed: %s\n"
 msgid "fetching CRL from '%s' failed: %s\n"
 msgstr "「%s」から「%s」への移動に失敗: %s\n"
 
 #, fuzzy, c-format
-#| msgid "renaming '%s' to '%s' failed: %s\n"
 msgid "processing CRL from '%s' failed: %s\n"
 msgstr "「%s」から「%s」への移動に失敗: %s\n"
 
@@ -7070,12 +7003,10 @@ msgid "%s:%u: line too long - skipped\n"
 msgstr "行が長すぎます"
 
 #, fuzzy, c-format
-#| msgid "invalid fingerprint"
 msgid "%s:%u: invalid fingerprint detected\n"
 msgstr "無効な指紋"
 
 #, fuzzy, c-format
-#| msgid "read error in '%s': %s\n"
 msgid "%s:%u: read error: %s\n"
 msgstr "「%s」で読出しエラー: %s\n"
 
@@ -7097,7 +7028,6 @@ msgid "SIGTERM received - still %d active connections\n"
 msgstr ""
 
 #, fuzzy
-#| msgid "not forced"
 msgid "shutdown forced\n"
 msgstr "未処理"
 
@@ -7140,7 +7070,6 @@ msgid "|STRING|return the attribute STRING"
 msgstr ""
 
 #, fuzzy
-#| msgid "Usage: gpg [options] [files] (-h for help)"
 msgid "Usage: dirmngr_ldap [options] [URL] (-h for help)\n"
 msgstr "使い方: gpg [オプション] [ファイル] (ヘルプは -h)"
 
@@ -7151,7 +7080,6 @@ msgid ""
 msgstr ""
 
 #, fuzzy, c-format
-#| msgid "invalid import options\n"
 msgid "invalid port number %d\n"
 msgstr "無効な読込みオプションです\n"
 
@@ -7176,32 +7104,26 @@ msgid "found attribute '%s'\n"
 msgstr ""
 
 #, fuzzy, c-format
-#| msgid "reading from '%s'\n"
 msgid "processing url '%s'\n"
 msgstr "「%s」から読み出します\n"
 
 #, fuzzy, c-format
-#| msgid "          w/o user IDs: %lu\n"
 msgid "          user '%s'\n"
 msgstr "  ユーザーIDなし: %lu\n"
 
 #, fuzzy, c-format
-#| msgid "                aka \"%s\""
 msgid "          pass '%s'\n"
 msgstr "                別名“%s”"
 
 #, fuzzy, c-format
-#| msgid "          w/o user IDs: %lu\n"
 msgid "          host '%s'\n"
 msgstr "  ユーザーIDなし: %lu\n"
 
 #, fuzzy, c-format
-#| msgid "          not imported: %lu\n"
 msgid "          port %d\n"
 msgstr "        未読込み: %lu\n"
 
 #, fuzzy, c-format
-#| msgid "                aka \"%s\""
 msgid "            DN '%s'\n"
 msgstr "                別名“%s”"
 
@@ -7210,7 +7132,6 @@ msgid "        filter '%s'\n"
 msgstr ""
 
 #, fuzzy, c-format
-#| msgid "                aka \"%s\""
 msgid "          attr '%s'\n"
 msgstr "                別名“%s”"
 
@@ -7223,32 +7144,26 @@ msgid "no attribute given for query '%s'\n"
 msgstr ""
 
 #, fuzzy
-#| msgid "WARNING: using insecure memory!\n"
 msgid "WARNING: using first attribute only\n"
 msgstr "警告: 剣呑なメモリーを使用しています!\n"
 
 #, fuzzy, c-format
-#| msgid "renaming '%s' to '%s' failed: %s\n"
 msgid "LDAP init to '%s:%d' failed: %s\n"
 msgstr "「%s」から「%s」への移動に失敗: %s\n"
 
 #, fuzzy, c-format
-#| msgid "renaming '%s' to '%s' failed: %s\n"
 msgid "binding to '%s:%d' failed: %s\n"
 msgstr "「%s」から「%s」への移動に失敗: %s\n"
 
 #, fuzzy, c-format
-#| msgid "dearmoring failed: %s\n"
 msgid "searching '%s' failed: %s\n"
 msgstr "包装除去に失敗しました: %s\n"
 
 #, fuzzy, c-format
-#| msgid "'%s' is not a JPEG file\n"
 msgid "'%s' is not an LDAP URL\n"
 msgstr "「%s」は、JPEGファイルではありません\n"
 
 #, fuzzy, c-format
-#| msgid "'%s' is not a valid long keyID\n"
 msgid "'%s' is an invalid LDAP URL\n"
 msgstr "「%s」は、有効な大型鍵IDでありません\n"
 
@@ -7301,7 +7216,6 @@ msgid "invalid char 0x%02x in host name - not added\n"
 msgstr ""
 
 #, fuzzy, c-format
-#| msgid "sending key %s to %s server %s\n"
 msgid "adding '%s:%d' to the ldap server list\n"
 msgstr "鍵%sを%sサーバー%sへ送信\n"
 
@@ -7317,7 +7231,6 @@ msgid "ldap_search hit the size limit of the server\n"
 msgstr ""
 
 #, fuzzy
-#| msgid "%s: invalid file version %d\n"
 msgid "invalid canonical S-expression found\n"
 msgstr "%s: 無効なファイル・バージョン%d\n"
 
@@ -7326,7 +7239,6 @@ msgid "gcry_md_open failed: %s\n"
 msgstr "署名に失敗しました: %s\n"
 
 #, fuzzy, c-format
-#| msgid "update secret failed: %s\n"
 msgid "oops: ksba_cert_hash failed: %s\n"
 msgstr "秘密の更新に失敗しました: %s\n"
 
@@ -7357,7 +7269,6 @@ msgid "error connecting to '%s': %s\n"
 msgstr "鍵輪「%s」の書込みエラー: %s\n"
 
 #, fuzzy, c-format
-#| msgid "error reading '%s': %s\n"
 msgid "error reading HTTP response for '%s': %s\n"
 msgstr "「%s」の読出しエラー: %s\n"
 
@@ -7374,7 +7285,6 @@ msgid "OCSP responder at '%s' status: %s\n"
 msgstr ""
 
 #, fuzzy, c-format
-#| msgid "renaming '%s' to '%s' failed: %s\n"
 msgid "hashing the OCSP response for '%s' failed: %s\n"
 msgstr "「%s」から「%s」への移動に失敗: %s\n"
 
@@ -7389,7 +7299,6 @@ msgid "allocating list item failed: %s\n"
 msgstr "鍵の読出しに失敗しました: %s\n"
 
 #, fuzzy, c-format
-#| msgid "error getting new PIN: %s\n"
 msgid "error getting responder ID: %s\n"
 msgstr "新しいPINの取得エラー: %s\n"
 
@@ -7412,7 +7321,6 @@ msgid "failed to allocate OCSP context: %s\n"
 msgstr "鍵の保管に失敗しました: %s\n"
 
 #, fuzzy, c-format
-#| msgid "can't access '%s': %s\n"
 msgid "can't get authorityInfoAccess: %s\n"
 msgstr "「%s」にアクセスできません: %s\n"
 
@@ -7420,7 +7328,6 @@ msgid "no default OCSP responder defined\n"
 msgstr ""
 
 #, fuzzy
-#| msgid "no default secret keyring: %s\n"
 msgid "no default OCSP signer defined\n"
 msgstr "既定の秘密鍵輪がありません: %s\n"
 
@@ -7429,7 +7336,6 @@ msgid "using default OCSP responder '%s'\n"
 msgstr ""
 
 #, fuzzy, c-format
-#| msgid "using cipher %s\n"
 msgid "using OCSP responder '%s'\n"
 msgstr "%s暗号法を使います\n"
 
@@ -7500,12 +7406,10 @@ msgid "can't allocate control structure: %s\n"
 msgstr "バックアップ・ファイル「%s」が作成できません: %s\n"
 
 #, fuzzy, c-format
-#| msgid "failed to initialize the TrustDB: %s\n"
 msgid "failed to initialize the server: %s\n"
 msgstr "信用データベースの初期化に失敗しました: %s\n"
 
 #, fuzzy, c-format
-#| msgid "failed to store the creation date: %s\n"
 msgid "failed to the register commands with Assuan: %s\n"
 msgstr "生成日の保管に失敗しました: %s\n"
 
@@ -7514,7 +7418,6 @@ msgid "Assuan accept problem: %s\n"
 msgstr ""
 
 #, fuzzy, c-format
-#| msgid "signing failed: %s\n"
 msgid "Assuan processing failed: %s\n"
 msgstr "署名に失敗しました: %s\n"
 
@@ -7522,7 +7425,6 @@ msgid "accepting root CA not marked as a CA"
 msgstr ""
 
 #, fuzzy
-#| msgid "checking the trustdb\n"
 msgid "CRL checking too deeply nested\n"
 msgstr "信用データベースの検査\n"
 
@@ -7736,6 +7638,7 @@ msgid "Directory Manager"
 msgstr ""
 
 #, fuzzy
+#| msgid "Bad Passphrase"
 msgid "PIN and Passphrase Entry"
 msgstr "パスフレーズが不正です"
 
@@ -8154,10 +8057,6 @@ msgstr ""
 #~ msgid ""
 #~ "generating the deprecated 16-bit checksum for secret key protection\n"
 #~ msgstr "問題視された16ビットのチェックサムを秘密鍵の保護に生成\n"
-
-#, fuzzy
-#~ msgid "failed to allocated keyDB handle\n"
-#~ msgstr "鍵の保管に失敗しました: %s\n"
 
 #~ msgid "the trustdb is corrupted; please run \"gpg --fix-trustdb\".\n"
 #~ msgstr ""
